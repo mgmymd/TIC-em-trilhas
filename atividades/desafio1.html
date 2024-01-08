@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 
-<h1> DESAFIO </h1>
+<h1> DESAFIO DA AULA 1 </h1>
 <script> 
 /* Escreva um algoritmo que leia três lados quaisquer.
  * Identifique se esses lados podem formar um triângulo.
@@ -8,10 +8,31 @@
  
  * Regra: suponha os lados a, b e c.
  * É triângulo somente se a condição for satisfeita: (a+b)>c e (a+c)>b e (b+c)>a.
- * Equilátero: todos os lados iguais;
- * Escaleno: todos os lados diferentes;
- * Isósceles: dois lados são iguais;
+ * Equilátero: todos os lados iguais.
+ * Escaleno: todos os lados diferentes.
+ * Isósceles: dois lados são iguais.
  */
 
+    var ladoa = +prompt("Entre com o valor do lado a: ");
+    var ladob = +prompt("Entre com o valor do lado b: ");
+    var ladoc = +prompt("Entre com o valor do lado c: ");
+
+    if(((ladoa+ladob)>ladoc) && ((ladoa+ladoc)>ladob) && ((ladob+ladoc)>ladoa)){
+        document.write("Os lados entrados correspondem a um triângulo. Lado a " + ladoa +
+        ", lado b " + ladob + " e lado c de " + ladoc  + "<br>");
+
+        if(ladoa === ladob && ladoa === ladoc && ladob === ladoc){
+            document.write("É um triângulo EQUILÁTERO.");
+        }
+        else if((ladoa===ladob && ladoa!==ladoc) || (ladoa===ladoc && ladoa !== ladob)){
+            document.write("É um triângulo ISÓSCELES.");
+        }
+        else{
+            document.write("É um triângulo ESCALENO.");
+        }
+    }
+    else{
+        document.write("Os lados entrados não correspondem a um triângulo.");
+    }
 
 </script>
