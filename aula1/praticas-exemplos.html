@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+
+<h1> Aula 1 - Exemplos práticos 2 </h1>
+<script> 
+    alert("Média de dois números!!");
+    var n1 = +prompt("Digite o primeiro número: ");
+    var n2 = +prompt("Digite o segundo número: ");
+
+    var media = (n1 + n2)/2;
+
+    document.write("A média do aluno é: " + media);
+
+</script>
+<br>
+<h1> Aula 1 - Exemplos práticos 3 </h1>
+<script> 
+    alert("Cálculo da área do triangulo");
+    var base = +prompt("Digite o valor da base: ");
+    var altura = +prompt("Digite o valor da altura: ");
+
+    var area = (base*altura)/2;
+
+    document.write("A base do triangulo é de " + base + "m, com altura de " + altura + "m2" + "<br>");
+    document.write("A área do triangulo é: " + area + "m2");
+
+</script>
+<br>
+<h1> Aula 1 - Exemplos práticos 4 </h1>
+<script> 
+    alert("Cálculos");
+    var num1 = +prompt("Insira o primeiro número: ");
+    var num2 = +prompt("Insira o segundo número: ");
+
+    var soma = num1 + num2;
+    var subtracao = num1 - num2;
+    var multiplicacao = num1*num2;
+    var divisao = num1/num2;
+
+    document.write("O valor inicial do número 1 é: " + num1 + " e para o número 2 é: " + num2 + "<br>");
+    document.write("A soma destes dois números é: " + soma + "<br>");
+    document.write("A subtração destes dois números é: " + subtracao + "<br>");
+    document.write("A multiplicação destes dois números é: " + multiplicacao + "<br>");
+    document.write("A divisão destes dois números é: " + divisao + "<br>");
+
+</script>
+<br>
+<h1> Aula 1 - Exemplos práticos 5 </h1>
+<script> 
+    var num1 = 10;
+    var num2 = 3;
+    var divisao = num1/num2;
+
+    document.write("Resultado: " + divisao + "<br>");
+    document.write("Resultado arredondado com o uso de Math: " + Math.round(divisao) + "<br>");
+    //Com o arredondamento, apresentar 2 casas após a vírgula
+    document.write("Resultado com uso de toFixed: " + divisao.toFixed(2)); 
+
+</script>

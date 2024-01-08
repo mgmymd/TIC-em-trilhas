@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 4 </h1>
+<script> 
+/* Atividade 4 - Crie um algoritmo que leia três valores a, b e c.
+ * Indique se a=b, a>b, a>=b, c<b ou se c!=b.
+ * Imprima o resultado na tela. */
+
+    var a = +prompt("Entre com o valor da variável a: ");
+    var b = +prompt("Entre com o valor da variável b: ");
+    var c = +prompt("Entre com o valor da variável c");
+
+    if (a === b) {
+        document.write("A variável a é igual a b" + "<br>");
+    } 
+    else if (a >= b) {
+        document.write("A variável a é maior ou igual a b" + "<br>");
+    } 
+    else if (c < b) {
+        document.write("A variável c é menor do que a variável b" + "<br>");
+    }
+    else if (c !== b) {
+        document.write("A variável c é diferente da variável b" + "<br>");
+    }
+    else {
+        document.write("Outros valores foram usados fora das condições fornecidas." + "<br>");
+    }
+
+    document.write("a vale " + a + ", b vale " + b + " e c vale " + c);
+
+</script>

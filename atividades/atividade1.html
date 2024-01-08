@@ -1,0 +1,17 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 1 </h1>
+<script>
+/* Atividade 1: Crie um algoritmo que leia o nome de um aluno, as notas de suas três provas.
+   Calcule e exiba a média das provas com o nome do aluno. */
+   
+    var nomeAluno = prompt("Insira o nome do aluno: ");
+    var nota1 = +prompt("Insira a nota 1 do aluno: ");
+    var nota2 = +prompt("Insira a nota 2 do aluno: ");
+    var nota3 = +prompt("Insira a nota 3 do aluno: ");
+
+    var media = (nota1 + nota2 + nota3)/3;
+
+    document.write("A média do aluno(a) " + nomeAluno + " é de " + media.toFixed(2));
+
+</script>

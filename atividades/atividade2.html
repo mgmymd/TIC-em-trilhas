@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 2 </h1>
+<script> 
+/* Atividade 2: Crie um algoritmo que leia o valor do raio e calcule a área e o perímeto do círculo correspondente. 
+ * Perímetro do círculo = 2 * pi * raio 
+ * Área do círculo = pi * raio^2
+ * Procurar por funções que o javascript oferece para resolver, além da forma mais simples */
+
+    alert("Resolução simples!!");
+        var raio1 = +prompt("Entre com o valor do raio do círculo: ");
+
+        var perimetro1 = 2 * 3.14159 * raio1;
+        var area1 = 3.14159 * raio1 * raio1;
+
+        document.write("O calor do perímetro do círculo de raio " + raio1 + " é de " +
+            perimetro1.toFixed(2) + " e a sua área é de " + area1.toFixed(2) + "<br>");
+
+    alert("Resolução 2!!")
+    var raio2 = +prompt("Entre com o valor do raio do círculo: ");
+
+    var perimetro2 = 2 * Math.PI * raio2;
+    var area2 = Math.PI * Math.pow(raio2, 2);
+
+    document.write("O calor do perímetro do círculo de raio " + raio2 + " é de " + 
+        perimetro2.toFixed(2) + " e a sua área é de " + area2.toFixed(2));
+
+</script>
