@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional Switch-Case </h1>
+<script>
+/* Um determinado clube de futebol pretende classificar seus ateltas em categorias e para isto ele contratou
+ * um desenvolvedor para criar um programa que execute essa tarefa.
+ * Assim, o clube criou uma tabela que contém a faixa etária do atleta e a sua categoria.
+ * Idade        Categoria
+ * 05 a 10      Infantil
+ * 11 a 15      Juvenil
+ * 16 a 20      Junior
+ * 21 a 25      Profissional
+ * Construa um programa que solicite o nome e a idade do atleta e imprima a sua categoria. */ 
+
+    alert("Analisador de atleta!");
+    var nome = prompt("Digite o nome: ");
+    var idade = +prompt("Digite a idade: ");
+    var categoria;
+
+    switch(idade){
+        case 5:
+        case 6:
+        case 7: 
+        case 8: 
+        case 9: 
+        case 10:
+            categoria = "Infantil!";
+            break;
+        case 11: 
+        case 12: 
+        case 13: 
+        case 14: 
+        case 15: 
+            categoria ="Juvenil!";
+            break;
+        case 16: 
+        case 17: 
+        case 18: 
+        case 19: 
+        case 20:
+            categoria="Junior!";
+            break;
+        case 21: 
+        case 22: 
+        case 23: 
+        case 24: 
+        case 25: 
+        categoria="Profissional!";
+        break
+        default:
+            categoria = "Inválido!";
+            break;
+    }
+    document.write("Nome: " + nome + "<br>");
+    document.write("Idade: " + idade + "<br>");
+    document.write("Categoria: " + categoria);
+
+</script>

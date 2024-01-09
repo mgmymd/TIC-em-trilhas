@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional Aninhada </h1>
+<script>
+/* Suponha que você faz uma análise mais realista da  viagem e conclui que um saldo menor que R$3000 é melhor não viajar.
+    * Sendo assim, mantém a condição da viagem na europa, e caso, o saldo juntado seja inferior a R$10000 e igual ou superior a 3000,
+    * a viagem deve ser feita no Brasil.
+    * Tendo todas essas novas informações, faça um programa que leia o saldo e decida a viagem. */
+
+    var saldo = +prompt("Entre com o valor atual do saldo: ");
+
+    if(saldo>=10000){
+        window.alert("PARABÉNS! SUA VIAGEM PARA EUROPA CHEGOU!");
+        document.write("Você possui saldo de R$" + saldo + "<br>");
+    }
+    else{
+        if(saldo>=3000 && saldo<10000){
+            document.write("Você possui saldo de R$" + saldo + ", será melhor considerar a viagem dentro do Brasil." + "<br>");
+
+        }
+        else{
+            document.write("Você possui saldo de R$" + saldo + ", será melhor ficar em casa" + "<br>");
+        }
+    }
+</script>

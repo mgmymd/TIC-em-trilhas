@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional Simples </h1>
+<script> 
+/* Crie um algoritmo que leia o nome de uma pessoa, o ano em que essa pessoa nasceu e o ano atual.
+ * Calcule a idade dessa pessoa e imprima uma mensagem caso ela já possua a maioridade. */
+    var nome = prompt('Qual o nome da pessoa: ');
+    var anoNascimento = +prompt('Qual o ano em que ela nasceu: ');
+    var dataAtual = new Date();
+    var anoAtual = dataAtual.getFullYear();
+
+    var idade = anoAtual - anoNascimento;
+
+    if (idade >= 18){
+        window.alert('Você, ' + nome + ', possui ' + idade + ' anos. Então, possui maioridade!')
+        document.write('Você, ' + nome + ', possui ' + idade + ' anos. Então, possui maioridade!' + "<br>");
+    }
+
+/* Exemplo 2: Suponha que você tenha feito uma reserva financeira para realizar a viagem dos sonhos, Europa.
+ * Sendo assim, decidiu que só vai realizar tal viagem quando o saldo juntado for superior ou igual a R$10000.
+ * Faça um programa que leia o salvo juntado e imprima o resultado com a mensagem anunciando que a viagem chegou! */
+    var saldo = +prompt('Qual o valor atual do saldo: R$');
+
+    if(saldo>=10000){
+        window.alert("PARABÉNS! SUA VIAGEM PARA EUROPA CHEGOU!");
+        document.write("Você possui saldo de R$" + saldo);
+    }
+</script>

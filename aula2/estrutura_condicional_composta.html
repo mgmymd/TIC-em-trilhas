@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional Composta </h1>
+<script>
+/* Exemplo3: Suponha que o cenário financeiro esteja complexo e você resolve considerar a viagem também pelo Brasil.
+ * Sendo assim, mantém a condição da viagem para Europa, mas caso o saldo seja inferior a R$10000, a viagem será feita dentro do Brasil.
+ * Faça um programa que leia o saldo e decida a viagem.*/
+    alert("Analisador de viagem!!")
+
+    var saldo = +prompt('Qual o valor atual do saldo: R$');
+
+    if(saldo>=10000){
+        window.alert("PARABÉNS! SUA VIAGEM PARA EUROPA CHEGOU!");
+        document.write("Você possui saldo de R$" + saldo + "<br>");
+    }
+    else{
+        document.write("Você possui saldo de R$" + saldo + ", será melhor considerar a viagem dentro do Brasil." + "<br>");
+    }
+
+/* Exemplo4: Faça um algoritmo para calcular a área de um círculo. 
+ * O valor do raio deve ser lido pelo programa e deve ser positivo*/
+    var raio = +prompt('Insira o valor do raio: ');
+
+    if (raio>=0){
+        var area = (Math.PI) * raio * raio;
+        document.write("A área do raio é: " + area.toFixed(2));
+    }
+    else{
+        document.write("O valor do raio não pode ser negativo");
+    }
+
+</script>
