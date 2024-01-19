@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional, Atividade 6 </h1>
+<script> 
+/* Atividade 2: Faça um algoritmo que receba o valor do salário de uma pessoa e o valor de um financiamento
+ * pretendido. Caso o financiamento seja menor ou igual a 5 vezes o salário da pessoa, o algoritmo deverá
+ * escrever "Financiamento Concedido!"; senão, ele deverá escrever "Financiamento Negado!". Independente
+ * de conceder ou não o financiamento, o algoritmo escreveá depois a frase "Obrigado por nos consultar! */
+
+    let salario = +prompt("Entre com o valor do seu salário: R$");
+    let financiamento = +prompt("Entre com o valor do financiamento pretendido: R$");
+
+    document.write(`O valor do financiamento pretendido é de: R$ ${financiamento}, para um salário de R$ ${salario}` + 
+            "<br>");
+    if(financiamento <= (5*salario)){
+        document.write("Financiamento Concedido!" + "<br>");
+    }
+    else{
+        document.write("Financiamento Negado!" + "<br>");
+    }
+
+    alert("Obrigado por nos consultar!");
+</script> 

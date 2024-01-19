@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional, Atividade 5 </h1>
+<script> 
+/* Atividade 1: Escreva um programa que leia um número inteiro. Se o número lido for positivo, escreva
+ * uma mensagem indicando se ele é par ou ímpar. Se o número for negativo, escreva a seguinte mensagem:
+ * "Este número não é positivo". */
+
+    let numero = +prompt("Escolha um número: ");
+
+    if(numero % 2 == 0){
+        document.write(`O número ${numero} inserido é par!` + "<br>");
+
+        if(numero<0) {
+            document.write("Este número não é positivo!" + "<br>");
+        }
+    }
+    else{
+        document.write(`O número ${numero} inserido é ímpar! ` + "<br>");
+        if(numero<0) {
+            document.write("Este número não é positivo!" + "<br>");
+        }
+    }
+
+</script>

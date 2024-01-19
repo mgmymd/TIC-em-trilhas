@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional, Atividade 9 </h1>
+<script> 
+/* Atividade 5: Escreva um algoritmo que calcule o IMC de uma pessoa e imprima a situação em que ela se encontra.
+ * Regra: IMC = MASSA/ALTURA^2
+ * 
+ * TABELA:
+                * IMC              CLASSIFICAÇÃO
+                * <16              MAGREZA GRAVE
+                * 16 A <17         MAGREZA MODERADA
+                * 17 A <18.5       MAGREZA LEVE
+                * 18.5 A 25        SAUDÁVEL
+                * 25 A <30         SOBREPESO
+                * 30 A <35         OBESIDADE GRAU I
+                * 35 A <40         OBESIDADE GRAU II
+                * >=40             OBESIDADE GRAU III       */
+
+    var altura = prompt("Entre com a altura da pessoa em metros: ");
+    var alturaComPonto = parseFloat(altura.replace(/,/g, '.'));
+    var massa = prompt("Entre com o peso da pessoa em kg: ");
+    var massaComPonto = parseFloat(massa.replace(/,/g, '.'));
+
+    var imc = massaComPonto / (alturaComPonto * alturaComPonto);
+
+    if(imc<16){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: MAGREZA GRAVE!`);
+    }
+    else if(imc>16 && imc<=17){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: MAGREZA MODERADA!`);
+    }
+    else if(imc>17 && imc<=18.5){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: MAGREZA LEVE!`);
+    }
+    else if(imc>18.5 && imc<=25){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: SAUDÁVEL!`);
+    }
+    else if(imc>25 && imc<=30){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: SOBREPESO!`);
+    }
+    else if(imc>30 && imc<=35){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: OBESIDADE GRAU I!`);
+    }
+    else if(imc>35 && imc<=40){
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: OBESIDADE GRAU II!`);
+    }
+    else{
+        document.write(`O IMC é de: ${imc.toFixed(2)}. Categoria: OBESIDADE GRAU III!`);
+    }
+
+</script> 

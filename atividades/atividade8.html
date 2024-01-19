@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional, Atividade 8 </h1>
+<script> 
+/* Atividade 4: Escreva o algoritmo "Programa solidário". O doador deve clicar nas opções (mostradas abaixo)
+ * para efetuar a sua doação. Imprima o resultado na tela com o valor da doação e uma mensagem de agradecimento.
+ * Utilize a estrutura SWITCH CASE
+            * 1-Para doar R$10
+            * 2-Para doar R$25
+            * 3-Para doar R$50
+            * 4-Para doar outros valores
+            * 5-Para cancelar */
+
+    alert("Programa solidário!")
+    alert("As opções e valores correspondentes disponíveis para doação:");
+    alert(" As opções e valores correspondentes disponíveis para doação:\n[1] - Para doar R$10\n[2] - Para doar R$25\n[3] - Para doar R$50\n[4] - Para doar outros valores\n[5] - Para cancelar");
+
+    var valorDoacao = +prompt("Entre com a opção que represente o valor que deseja contribuir: ")
+
+    switch(valorDoacao){
+        case 1: 
+                doacao="10";
+                break;
+        case 2:
+                doacao="25";
+                break;
+        case 3:
+                doacao="50"
+                break;
+        case 4:
+                doacao=+prompt("Entre com o valor que deseja contribuir: R$ ");
+                break;
+        case 5:
+                doacao="Cancelar"
+                document.write("Operação cancelada!")
+                break;
+        default:
+                doacao="Categoria não válida. Por favor, selecione uma categoria de 1 a 5."
+                document.write(doacao + "<br>")
+                break;  }
+    
+    if(doacao !== "Cancelar" && doacao !== "Categoria não válida. Por favor, selecione uma categoria de 1 a 5."){
+        document.write(`O valor doado foi de: R$ ${doacao}!`+ "<br>");
+        document.write("Muito obrigado por contribuir com o Programa Solidário!");
+    }
+
+</script>

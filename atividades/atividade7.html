@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<h1> Aula 2 - Estrutura Condicional, Atividade 7 </h1>
+<script> 
+/* Atividade 3: Escreva um algoritmo que calcule a média de um aluno numa dada disciplina e imprima o resultado.
+ * Regra: Durante o semestre o aluno faz 3 avaliações com notas de 0 a 10. 
+ * É considerado aprovado, o aluno que consegue nota igual ou superior a 7. 
+ * Se este ficar com nota menor que 7 e maior ou igual a 5, será considerado de recuperação. 
+ * No entanto, se a nota for abaixo de 5, o aluno será considerado reprovado e deverá repetir o semestre. */
+
+    var disciplina = prompt("Entre com a disciplina que deseja cadastrar a nota: ");
+    var nota1 = +prompt("Entre com a primeira nota: ");
+    var nota2 = +prompt("Entre com a segunda nota: ");
+    var nota3 = +prompt("Entre com a terceira nota: ");
+
+    var media = (nota1 + nota2 + nota3)/3;
+    document.write(`A  média do aluno nesta disciplina, ${disciplina} é: ${media.toFixed(2)}.` + "<br>");
+
+    if (media>10){
+        document.write("A média calculada está errada! Deve ser entre 0-10, reveja as notas digitadas.");
+    }
+    else if(media >= 7 && media <=10){
+        document.write("O aluno foi aprovado na disciplina!");
+    }
+    else if(media < 7 && media >= 5){
+        document.write(`O aluno está de recuperação na disciplina ${disciplina}!`);
+    }
+    else{
+        document.write(`O aluno está reprovado na disciplina ${disciplina}, deverá repetir o semestre!`)
+    }
+
+</script>
