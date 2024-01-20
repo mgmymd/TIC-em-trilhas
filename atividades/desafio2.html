@@ -4,14 +4,44 @@
 <script> 
 /* DESAFIO: Faça um programa que leia quatro valores i, n1, n2 e n3. Sabe-se que o i é um número
  * inteiro e positivo. E, n1, n2 e n3 são quaisquer valores reais. O programa deve escrever os valores lidos e:
- * Se i=1, escrever os alores n1, n2 e n3 em ordem crescente;
- * Se i=2, escrever os valores n1, n2 e n3 em ordem decrescente;
- * Se i=3, escrever os três valores n1,n2,n3 de forma que o maior valor fique entre os outros dois;
+ * Se i=1, escrever os três valores n1, n2 e n3 em ordem crescente;
+ * Se i=2, escrever os três valores n1, n2 e n3 em ordem decrescente;
+ * Se i=3, escrever os três valores n1, n2 e n3 de forma que o maior valor fique entre os outros dois;
  * 
- * Se i não for um dos três valores acima, imprima uma mensagem indicando este comportamento: 1 é um valor
+ * Se i não for um dos três valores acima, imprima uma mensagem indicando este comportamento: i é um valor
  * inteiro para colocar em ordem os valores de acordo com o que deseja ou está sendo proposto. */
 
+    let i = +prompt("Entre com o valor de i, devendo ser 1, 2 ou 3.");
+    let n1 = +prompt("Entre com o valor de n1: ");
+    let n2 = +prompt("Entre com o valor de n2: ");
+    let n3 = +prompt("Entre com o valor de n3: ");
 
+    let menorValor = Math.min(n1, n2, n3);
+    let maiorValor = Math.max(n1, n2, n3);
 
+    // Descobrindo o valor intermediário
+    if(((n1==menorValor && n1!=maiorValor) && (n2!=menorValor && n2==maiorValor)) || ((n1!=menorValor && n1==maiorValor) && (n2==menorValor && n2!=maiorValor))){
+        var valorIntermediario = n3;
+    }
+    else if(((n3==menorValor && n3!=maiorValor) && (n2!=menorValor && n2==maiorValor)) || ((n3!=menorValor && n3==maiorValor) && (n2==menorValor && n2!=maiorValor))){
+        var valorIntermediario = n1;
+    }
+    else{ 
+        var valorIntermediario = n2; 
+    }
+
+    // Ordenando os valores
+    if(i==1){
+        document.write(`${menorValor}, ${valorIntermediario}, ${maiorValor}`);
+    }
+    else if(i==2){
+        document.write(`${maiorValor}, ${valorIntermediario}, ${menorValor}`);
+    }
+    else if(i==3){
+        document.write(`${menorValor}, ${maiorValor}, ${valorIntermediario}`);
+    }
+    else{
+        document.write("Entre com um valor inteiro válido de i: 1, 2 ou 3.")
+    }
 
 </script> 
