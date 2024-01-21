@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+
+<h1> Aula 3 - Estrutura De Repetição - DO...WHILE </h1>
+<script>
+/* Faça um algoritmo que escreva os números de 0 a 9*/
+    alert("Contador de números (0-9)");
+    var contador = 0;
+
+    do{
+        document.write(contador + "<br>");
+        contador++;
+    } while(contador<10);
+
+    document.write("A contagem foi finalizada!" + "<br>")
+
+/* Escreva um algoritmo que leia um dado número e imprima na tela a sua tabuada */
+    alert("Tabuada!!");
+
+    var contadorTabuada = 1;
+    var numero = +prompt("Entre com o número da tabuada que deseja: ");
+
+    do{
+        var resultado = contadorTabuada * numero;
+        document.write(resultado + "<br>");
+        contadorTabuada++;
+    } while(contadorTabuada<11);
+    
+    document.write("Tabuada finalizada!" + "<br>");
+
+/* Outra forma de fazer a tabuada: */
+    var contadorTabuada2 = 1;
+    var numero2 = +prompt("Entre com o número da tabuada que deseja: ");
+
+    do{
+        var soma = contadorTabuada2 * numero2;
+        document.write(`${numero2} X ${contadorTabuada2} = ${soma}` + "<br>")
+        contadorTabuada2++;
+    } while(contadorTabuada2<11);
+
+    document.write("Tabuada finalizada!" + "<br>");
+
+/* Escreva um algoritmo que leia uma quantidade de números e imprima o resultado informando a
+ * quantidade de números digitados que são negativos.
+ * Imagine que o usuário pode escolher quantos números ele deseja digitar. */
+    alert("Contador de números negativos!");
+    var quantidadeTotal = +prompt("Digite a quantidade de numeros que deseja digitar: ");
+    var contadorNegativos = 1;
+    var quantidadeNegativosDigitados = 0;
+
+    do{
+        var numeroDigitado = +prompt(`Digite o ${contadorNegativos} número: `);
+
+        if(numeroDigitado < 0){
+            quantidadeNegativosDigitados = quantidadeNegativosDigitados + 1;
+        }
+        contadorNegativos++;
+    } while(contadorNegativos < quantidadeTotal)
+
+    document.write(`A quantidade total de números negativos digitados foi de: ${quantidadeNegativosDigitados}` + 
+        "<br>");
+
+</script>

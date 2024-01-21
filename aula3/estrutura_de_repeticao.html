@@ -1,0 +1,67 @@
+<meta charset="UTF-8">
+
+<h1> Aula 3 - Estrutura De Repetição - WHILE </h1>
+<script>
+/* Suponha um algoritmo que conte de 0 a 10, escreva uma frase quando terminar de contar.*/
+    alert("Contador de números (0-10)");
+    let contadorDeNumeros = 0;
+
+    while(contadorDeNumeros <= 10){
+        document.write(contadorDeNumeros + "<br>");
+        contadorDeNumeros++;
+    }
+
+    document.write("A contagem de números foi finalizada.");
+
+/* Suponha agora um algoritmo que conte de 10 até 0 e emita uma frase quando terminar de contar. */
+
+    alert("Contador de números (10-0)");
+
+    let contadorDeNumeros2 = 10;
+
+    while(contadorDeNumeros2 >= 0){
+        document.write(contadorDeNumeros2 + "<br>");
+        contadorDeNumeros2 = contadorDeNumeros2 - 1;
+    }
+    
+    document.write("A contagem de números foi finalizada." + "<br>");
+
+/* Escreva um algoritmo que o usuário digite a quantidade de números que ele deseja somar. 
+ * Faça com que o programa leie esses números e no final apresente o resultado da soma. */
+    alert("Soma de números.")
+
+    var contador = 1;
+    var numero;
+    var soma = 0;
+    var quantidadeContar = +prompt("Qual é a quantidade de números que deseja contar?");
+
+    while (contador <= quantidadeContar){
+        var numero = +prompt(`Digite o número ${contador}: `);
+        soma = soma + numero;
+        contador = contador + 1;
+    }
+
+    document.write("A soma dos números é: " + soma);
+
+/* A leitura de 3 notas de um aluno para calcular as médias. */
+    alert("Cálculo da média dos alunos!")
+    var quantidadeAlunos = +prompt("Insira a quantidade de alunos: ");
+    var contadorAlunos = 1;
+    var aluno;
+    var nota1, nota2, nota3;
+
+    while(contadorAlunos <= quantidadeAlunos){
+        aluno = prompt("Digite o nome do aluno: ");
+        nota1 = +prompt("Digite a nota 1: ");
+        nota2 = +prompt("Digite a nota 2: ");
+        nota3 = +prompt("Digite a nota 3: ");
+
+        var media = (nota1 + nota2 + nota3)/3
+
+        document.write("......................................................." + "<br>");
+        document.write(`A média do aluno ${aluno} é: ${media.toFixed(2)}.` + "<br>");
+        document.write("......................................................." + "<br>");
+
+        contadorAlunos++;
+    }
+</script>
