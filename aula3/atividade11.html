@@ -3,9 +3,17 @@
 <h1> Aula 3 - Estrutura De Repetição - Atividade 2 </h1>
 <script>
 /* Escreva um programa que repita a leitura de uma senha até que ela seja válida. Para cada leitura,
- * de senha incorreta informada, escrever a mensage: "Senha inválida" e "Tente novamente". Quando a senha
+ * de senha incorreta informada, escrever a mensagem: "Senha inválida" e "Tente novamente". Quando a senha
  * for informada corretamente deve ser impressa a mensagem: "Acesso Permitido" e o algoritmo deve ser encerrado.
  * Considere que a senha correta é o valor 2023. */
 
+    const senhaCorreta = 2023;
+    var senhaDigitada = +prompt("Type your password: ");
+
+    while(senhaCorreta != senhaDigitada){
+        alert("Wrong password. Try again.");
+        var senhaDigitada = +prompt("Type your password: ");
+    }
+    document.write("Login success!");
 
 </script>

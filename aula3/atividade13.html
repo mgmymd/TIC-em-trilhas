@@ -3,15 +3,42 @@
 <h1> Aula 3 - Estrutura De Repetição - Atividade 4 </h1>
 <script>
 /* Uma grande empresa deseja determinar qual de seus produtos tem a preferência de seus clientes.
- * Escreva um algoritmo para ler o tipo de produto comprado (codificado na seguinte forma: 
+ * Escreva um algoritmo para ler o tipo de produto comprado codificado na seguinte forma: 
         1. ProdutoA
         2. ProdutoB
         3. ProdutoC
-        4.FIM
+        4. FIM
  * Caso o usuário informe um código inválido, fora da faixa de 1 a 4, deve ser solicitado um novo código,
  * até que este seja válido. O programa será encerrado quando o código informado for o número 4.
- * Deve ser escrito a mensagem: MUITO OBRIGADO e a quantidade de clientes que compraram esse tipo
- * de produto.*/
+ * Deve ser escrito a mensagem: MUITO OBRIGADO e a quantidade de clientes que compraram esse tipo  de produto.*/
 
+       var i=0;
+       var produtoA = 0;
+       var produtoB = 0;
+       var produtoC = 0;
 
+       while(i==0){
+              var acao = +prompt("Entre com a ação que deseja realizar:\n[1] ProdutoA \n[2] ProdutoB \n[3] ProdutoC \n[4] FIM ")
+
+              if(acao==1){
+                     produtoA = produtoA + 1;
+              }
+              else if(acao==2){
+                     produtoB = produtoB+ 1;
+              }
+              else if(acao==3){
+                     produtoC = produtoC+ 1;
+              }
+              else if (acao==4){
+                     document.write(`O produto ProdutoA foi comprado por ${produtoA} pessoas.`+ "<br>");
+                     document.write(`O produto ProdutoB foi comprado por ${produtoB} pessoas.`+ "<br>");
+                     document.write(`O produto ProdutoC foi comprado por ${produtoC} pessoas.`+ "<br>");
+                     document.write("MUITO OBRIGADO!" + "<br>");
+                     document.write("FIM");
+                     i = 1;
+              }
+              else{
+                     alert("Código inválido, por favor, insira um número de 1 a 4.");
+              }
+       }
 </script>
