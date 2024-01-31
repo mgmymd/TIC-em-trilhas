@@ -6,5 +6,39 @@
  * Para cada ponto, escrever o quadrante a que ele pertence. O algoritmo será encerrado quando pelo menos
  * uma das duas coordenadas for NULA. Nesta situação escreva a mensagem "ALGORITMO INTERROMPIDO" */
 
+    var i = 0;
 
+    while(i==0){
+        alert("Entre com os valores de X e Y, quando uma das coordenadas for zero o programa será encerrado!")
+        var x = +prompt("Entre com o valor da coordenada X");
+        var y = +prompt("Entre com o valor da coordenada Y");
+
+        if(x>0 && y==0){
+                alert("Algoritmo interrompido!");
+                i = 1;
+        }
+        else if(x>0 && y>0){
+            document.write(`(${x}, ${y}) pertence ao primeiro quadrante.` + "<br>")
+        }
+        else if(x>0 && y<0){
+            document.write(`(${x}, ${y}) pertence ao quarto quadrante.` + "<br>")
+        }
+        else if(x==0 && (y>0 || y<0)){
+            alert("Algoritmo interrompido!");
+            i = 1;
+        }
+        else if(x<0 && y==0){
+            alert("Algoritmo interrompido!");
+            i = 1;
+        }
+        else if(x<0 && y>0){
+            document.write(`(${x}, ${y}) pertence ao segundo quadrante.` + "<br>")
+        }
+        else if(x<0 && y<0){
+            document.write(`(${x}, ${y}) pertence ao terceiro quadrante.` + "<br>")
+        }
+        else{
+            alert("Digite novamente a coordenada, que não seja um símbolo ou letra");
+        }
+    }
 </script>
