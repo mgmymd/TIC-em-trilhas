@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 
-<h1> Aula 3 - Estrutura De Repetição - Atividade 5 </h1>
+<h1> Aula 3 - Estrutura De Repetição - Atividade 5/DESAFIO </h1>
 <script>
 /* Um funcionário de uma empresa recebe, anualmente, aumento salarial. Sabe-se que:
         a) esse funcionário foi contratado em 2018, com um salário inicial de R$2000,00;
@@ -9,5 +9,19 @@
  * Faça um programa que determine o salário desse funcionário em 2023.
  * Apresente todos os valores. */
 
+        const salarioInicial = 2000;
+        var aumento = 0.015;
+        var dataAtual = new Date();
+        var anoAtual = dataAtual.getFullYear();
+        var novoSalario;
+        novoSalario = salarioInicial + (salarioInicial * aumento);
 
+        document.write(`O salário incial é de R$ ${salarioInicial}, com o aumento passou a ser de R$${novoSalario.toFixed()}.` + "<br>")
+
+        for(var ano=2020; ano <= anoAtual; ano++){
+                var aumentoPorAno = 2*aumento;
+
+                novoSalario = novoSalario + (aumentoPorAno * novoSalario);
+                document.write(`O salário final do ano ${ano} é de R$${novoSalario.toFixed()}!` + "<br>")
+        }
 </script>

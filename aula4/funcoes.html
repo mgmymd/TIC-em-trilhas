@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+
+<h1> Aula 4 - Funções - Tipos de funções </h1>
+<script>
+    document.write("Exemplo 1" + "<br>")
+/* Ex1: Suponha um programa que imprima a idade de algumas pessoas. Inicial,ente é aplicado uma tag <br>
+ * de quebra de linha. Para cada diferente mensagem é atribuiída uma quebra de linha dentro do document.write
+ * E se for decidido alterar a quebra de linnhas para por ex, 2 espaços ou 3?
+ * Nesse caso podemos por exemplo: document.write("<br><br><br>"), mas não é o caso
+ * E se essa alteração se tornar um pedido recorrente no projeto? 
+ * É mais interessante que escreva uma função, para manutenção será necessário apenas alterar a função, e
+ * não todas as linhas em que o <br> aparece, podemos apenas adicionar um <br> a mais uma única vez dentro
+ * da função chamada saltoLinha*/
+    alert("Analisador de idades!");
+    
+    function saltoLinha(){
+        document.write("<br><br>");
+    }
+
+    var dataAtual = new Date();
+    var anoAtual = dataAtual.getFullYear();
+
+
+    document.write("José tem " + (anoAtual - 1985) + " anos.");
+    saltoLinha();
+    document.write("Maria tem " + (anoAtual - 1992) + " anos.");
+    saltoLinha();
+    document.write("Pedro tem " + (anoAtual - 2004) + " anos.");
+    saltoLinha();
+
+    document.write("Exemplo 2" + "<br>")
+/* Ex2: Faça um programa que leia 2 números e realize as seguintes operações: a) soma, b) subtração,
+ * c) multiplicação, d) divisão e imprima o resultado na tela;  */
+    var num1 = +prompt("Entre com o valor do primeiro número: ");
+    var num2 = +prompt("Entre com o valor do segundo número: ");
+
+    function soma (num1, num2){
+        var resultado = num1 + num2;
+        document.write(`O resultado da soma de ${num1} + ${num2} é de ${resultado}`);
+    }
+
+    function subtracao(num1, num2){
+        var resultado = num1 - num2;
+        document.write(`O resultado da subtração de ${num1} - ${num2} é de ${resultado}`);
+    }
+
+    function multiplicacao(num1, num2){
+        return num1 * num2;
+    }
+
+    function divisao(num1, num2){
+        return num1/num2;
+    }
+
+    soma(num1, num2);
+    saltoLinha();
+    subtracao(num1, num2);
+    saltoLinha();
+    document.write("A multiplicação é " + multiplicacao(num1, num2).toFixed(2) + "<br>");
+    saltoLinha();
+    document.write("A divisão é " + divisao(num1, num2).toFixed(2) + "<br>");
+
+    document.write("Exemplo 3" + "<br>");
+/* Ex3: Encontrar a solução de uma raiz quadrada é encontrar os possíveis valores de X. O valor de 
+ * delta influencia totalmente o resultado final.
+ *          delta<0 - não possui raízes reais
+ *          delta = 0 - possui apenas uma raíz;
+ *          delta > 0 - possui duas raízes;
+ * Faça um programa que encontre as raízes. Faça delta como uma função;
+ * Equações:
+ *          a*x^2 + b*x + c = 0
+ *          delta = b^2 - 4*a*c
+ *          x = (-b +-raiz quadrada de delta) / 2*a      */
+    alert("Cálculo de uma equação de segundo grau!");
+
+    function calculoDelta(a,b,c){
+        return(b*b - (4*a*c));
+    }
+
+    var a = +prompt("Entre com o valor de a: ");
+    var b = +prompt("Entre com o valor de b: ");
+    var c = +prompt("Entre com o valor de c: ");
+
+    var delta = calculoDelta(a, b, c);
+    document.write("O valor de delta é: " + delta);
+    saltoLinha();
+
+    if(delta < 0){
+        document.write("Esta equação não possui raízes reais!");
+    }
+    else{
+        if(delta==0){
+            var raizUm = (-b + Math.sqrt(delta))/(2*a);
+            document.write("Esta equação possui apenas uma raiz: " + raizUm.toFixed(2));
+        }
+        else{
+            var raizUm = (-b + Math.sqrt(delta))/(2*a);
+            var raizDois = (-b - Math.sqrt(delta))/(2*a);
+            document.write(`As raízes são ${raizUm.toFixed(2)} e ${raizDois.toFixed(2)}!`);
+        }
+    }
+
+</script>
