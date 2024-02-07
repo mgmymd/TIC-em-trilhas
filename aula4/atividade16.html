@@ -8,8 +8,26 @@
  *      F(n) = n.F(n-1), se n>1;
  * Onde n é um número inteiro positivo. Uma propriedade, facilmente verificável, dos fatoriais é que:
  * n!=n.(n-1)! Esta propriedade é chamada de propriedade recursiva: o fatorial de um número pode ser
- * calculado através do fatorial de seu antecessor. */ 
+ * calculado através do fatorial de seu antecessor. */
+    function calculandoFatorial(numero) {
+        var resultadoFatorial = numero;
+        
+        if (numero === 0 || numero === 1) {
+            document.write(`O fatorial de ${numero} é: 1`)
+        }
+        else{
+            while (numero > 1) {
+// Para o cálculo de fatorial é necessário reduzir o número dado por 1 a cada passagem
+                numero = numero - 1;
+                resultadoFatorial = resultadoFatorial * numero;
+            }
 
+            document.write(`O fatorial de ${numero} é: ` + resultadoFatorial);
+        }
+    }
 
+    var numeroFatorial = +prompt("Entre com o fatorial que deseja calcular: ");
+
+    calculandoFatorial(numeroFatorial);
 
 </script>

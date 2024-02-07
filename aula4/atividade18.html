@@ -4,8 +4,25 @@
 <script>
 /* Ex4: Escreva um programa que leia um valor inteiro (maior ou igual a 1 e menor ou igual a 10) e exibe
  * a tabuada (até 10) de multiplicação do número lido.
- * Função: tabuada(n1,n2:inteiro):inteiro */ 
+ * Função: tabuada(n1,n2:inteiro):inteiro */
+    alert("Tabuada");
 
+    function tabuada(n1,n2){
+        document.write(`${n1} X ${n2} = ` + n1*n2 + "<br>");
+    }
 
+    var contador = 0;
+    while(contador == 0){
+        var num1 = +prompt("Insira a tabuada desejada (maior ou igual a 1 e menor ou igual a 10): ");
 
+        if(num1>=0 && num1<=10){
+            for(var i=1; i<=10; i++){
+                tabuada(num1, i);
+                contador = 1;
+            }
+        }
+        else{
+                    alert("Insira um número válido, maior ou igual a 1 e menor ou igual a 10!");
+        }
+    }
 </script>

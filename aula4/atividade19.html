@@ -4,7 +4,27 @@
 <script>
 /* Ex5: Faça um programa que leia 3 números e em seguida imprima o resultado em ordem decrescente.
  * Use o conceito de Função para desenvolver o código */ 
+    function comparandoValoresIntermediario(n1, n2, n3, maiorValor, menorValor){
+        if(((n1==menorValor && n1!=maiorValor) && (n2!=menorValor && n2==maiorValor)) || ((n1!=menorValor && n1==maiorValor) && (n2==menorValor && n2!=maiorValor))){
+            var valorIntermediario = n3;
+            document.write(`${maiorValor}, ${valorIntermediario}, ${menorValor}`);
+        }
+        else if(((n3==menorValor && n3!=maiorValor) && (n2!=menorValor && n2==maiorValor)) || ((n3!=menorValor && n3==maiorValor) && (n2==menorValor && n2!=maiorValor))){
+            var valorIntermediario = n1;
+            document.write(`${maiorValor}, ${valorIntermediario}, ${menorValor}`);
+        }
+        else{ 
+            var valorIntermediario = n2; 
+            document.write(`${maiorValor}, ${valorIntermediario}, ${menorValor}`);
+        }
+    }
 
+    let num1 = +prompt("Digite o primeiro número: ");
+    let num2 = +prompt("Digite o primeiro número: ");
+    let num3 = +prompt("Digite o primeiro número: ");
 
+    var menorValor = Math.min(num1,num2,num3);
+    var maiorValor = Math.max(num1,num2,num3);
+    comparandoValoresIntermediario(num1, num2, num3, maiorValor, menorValor);
 
 </script>

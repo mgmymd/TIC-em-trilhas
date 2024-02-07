@@ -2,9 +2,27 @@
 
 <h1> Aula 4 - Funções - Atividade 3 </h1>
 <script>
-/* Ex3: Faça um algoritmo para exibir os 10 primeios elementos de uma série de Fibonacci usando a função
+/* Ex3: Faça um algoritmo para exibir os 10 primeiros elementos de uma série de Fibonacci usando a função
  * com passagem de parâmetros; */ 
+    alert("Sequência de Fibonnaci!");
 
+    function fibonacciCalculo(quantidade, penultimo, ultimo){
+        for(var i = 0; i<quantidade; i++){
+            var numero = penultimo + ultimo;
 
+            document.write(`${penultimo} + ${ultimo} = `+ numero + "<br>");
+
+            penultimo = ultimo;
+            ultimo = numero;
+        }
+    }
+
+    var penultimoNumero = 0;
+    var ultimoNumero = 1;
+    var quantidadeExibida = +prompt("Entre com a quantidade de números da sequência de Fibonacci que deseja exibir: ");
+
+    document.write(penultimoNumero + "<br>");
+    document.write(ultimoNumero + "<br>");
+    fibonacciCalculo(quantidade=quantidadeExibida, penultimoNumero, ultimoNumero);
 
 </script>

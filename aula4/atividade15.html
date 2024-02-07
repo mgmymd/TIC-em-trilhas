@@ -2,8 +2,24 @@
 
 <h1> Aula 4 - Funções - Atividade 1 </h1>
 <script>
-/* Ex1: Crie um algoritmo para verificar se um valor é par ou ímpar usando rotinas internas ou funções */ 
+/* Ex1: Crie um algoritmo para verificar se um valor é par ou ímpar usando rotinas internas ou funções */
+    alert("Verificador de números!");
 
+    function verificar(num){
+        return numero%2;
+    }
 
+    var numero = +prompt("Entre com o valor que deseja verificar:   ");
+
+    if(verificar(numero)==0){
+        document.write("O número é par!")
+    }
+    else if(verificar(numero)==1 || verificar(numero)==-1){
+        document.write("O número é ímpar!")
+    }
+    else{
+        document.write("Por favor, digite um número.")
+    }
 
 </script>
+</html>
