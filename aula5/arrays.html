@@ -1,0 +1,92 @@
+<meta charset="UTF-8">
+
+<h1> Aula 5 - ARRAYS E MATRIZES: ARRAYS </h1>
+<script>
+/*  Ex1: Criando vetores - O vetor vetorNum é criado com o tamanho 5 e inicializado conforme abaixo.
+ * O array não foi inicializado já com os elementos, mas estes foram adicionados após sua inicialização, 
+ * indicando quais valores queremos adicionar em cada espaço disponível; */ 
+    document.write("Exemplo 1 - criando vetores de forma tradicional" + "<br>");
+
+    var vetorNum = new Array(5);
+    vetorNum[0]=1;
+    vetorNum[1]=4;
+    vetorNum[2]=7;
+    vetorNum[3]=9;
+    vetorNum[4]=2;
+
+    document.write(vetorNum + "<br>");
+    for(var c=0; c<5; c++){
+        document.write("Na posição " + c + " , temos o valor: " + vetorNum[c] + "<br>");
+    }
+
+/* Ex2: Outra inicialização de vetores, sem o uso de new para inicializar o objeto do tipo array,
+ * isto é, o vetor já foi inicializado com valores compondo */
+    document.write("--------------------------------------------------------------------------" + "<br>")
+    document.write("Exemplo 1 - outra inicialização de vetores" + "<br>");
+    var outroVetor = [1,4,7,9,2,99]
+
+    for(var c=0; c<6; c++){
+        document.write("Na posição " + c + " , temos o valor: " + outroVetor[c] + "<br>");
+    };
+
+/* Ex3: Comprimento de um vetor */
+    document.write("--------------------------------------------------------------------------" + "<br>")
+    document.write("Comprimento de vetores" + "<br>");
+    document.write("O comprimento do vetor outroVetor é de: " + outroVetor.length + "<br>");
+    document.write("O comrpimento do vetor vetorNum é: " + vetorNum.length + "<br>");
+
+/* Ex4: Acessando vetores - Crie um programa que leia 4 números através de um vetor e logo em seguida
+ * imprima a soma desses números.*/
+    document.write("--------------------------------------------------------------------------" + "<br>")
+    alert("Criando vetores!");
+    var num = new Array(4);
+
+    for (var i=0; i<4; i++){
+        num[i] = +prompt("Digite o número da posição " + i + ":");
+    }
+    var total = num[0] + num[1] + num[2] + num[3];
+    document.write(`O total da soma dos 4 números é de: ${total}` + "<br>");
+    document.write(`Os elementos do array são: ${num}` + "<br>");
+
+/* Ex5 - Tamanho do array: Crie um programa que inicialize os 2 primeiros elementos de um vetor, como o 0
+ * e o 1. Os demais elementos do vetor de comprimento 10, deve ser preenchdi com a seguinte regra:
+ *  vetor[i] = vetor[i-1] + vetor[i-2]
+ * Imprima cada elemento do vetor.*/
+    document.write("--------------------------------------------------------------------------" + "<br>");
+    alert("Acessando vetores - tamanho do array");
+
+    /* Podia também ter sido inicializado da seguinte forma: 
+     * var f = new Array(10);
+     * f[0] = 0;
+     * f[1] = 1;     */
+    var vetorExemploQuatro = [1,2];
+
+    for(i=2; i<10; i++){
+        vetorExemploQuatro[i] = vetorExemploQuatro[i-1] + vetorExemploQuatro[i-2];
+        document.write("Na posição " + i +" temos o valor de: " + vetorExemploQuatro[i] + "<br>")
+    };
+    document.write("O vetor tem os valores: " + vetorExemploQuatro + "<br>")
+
+/* Ex6: Crie um algoritmo que leia um vetor de tamanho 4. Inicialize o vetor com o usuário digitando os
+ * valores de cada elemento.
+ * Inicie a soma desse vetor com uma variável de valor 10, num=10 
+ * Regra: para cada rodada, a variável num deve assumir o seu novo valor, ou seja, o seu valor atual mais
+ * o elemento digitado na posição anterior. */
+    document.write("--------------------------------------------------------------------------" + "<br>");
+    alert("Acessando vetores - tamanho do array");
+
+    var exSeis = new Array(4);
+    var num = 10;
+
+    for(var i=0; i<exSeis.length; i++){
+        // Pedindo para inicializar o vetor e adicionar os valores que vão preencher as 4 posições
+        exSeis[i] = +prompt(`Digite o valor que a casa ${i} deve assumir: `);
+        // Somando os valores entrados de cada posição do vetor a variável num e apresentando
+        num = num + exSeis[i];
+        document.write(`O valor de exSeis na posição ${i} é de ${exSeis[i]}, ao ser somado com o valor 10 da variável num é de: ${num}` + "<br>");
+    }
+
+    document.write(`O array exSeis apresenta os seguintes valores: ${exSeis}` + "<br>");
+
+
+</script>
