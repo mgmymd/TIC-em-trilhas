@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<h1> Aula 6 - Encontrando o menor valor! Forma sofisticada </h1>
+<script>
+/* ORDENAÇÃO = Usado para descobrir quais são os menores e os maiores valores.
+ * Problema 1: Comprar o carro mais barato.
+ *      Honda: 130000      Fusion: 200000
+ *      Mobi: 52000        HB20: 85000
+ *      Peugeot: 71000 
+ * 
+ * Defina dois valores: 
+ *      o valor do produto "atual" que estamos 
+ *      e do "maisBarato"até agora.
+ * Insira um contador "i" que permita digitar e passear pelos cinco valores estipulados.
+ * Vamos usar uma condicional e perguntar se o valor atual que estamos digitando é mais barato?
+ * Se não for atendido o valor que continua dentro da variável continua no valor mais barato. */
+
+    alert("Procurando o menor valor!");
+   
+    var i=0;
+    while(i<=5){
+        var atual = +prompt("Digite o valor do " + i +"º valor:");
+        if(i==1){
+            var maisBarato=atual;
+        } else{
+            if(atual<maisBarato){
+                maisBarato=atual;
+            }
+        }
+        i = i +1;
+    }
+    document.write(`O menor valor é: ${maisBarato}!`)
+
+</script>

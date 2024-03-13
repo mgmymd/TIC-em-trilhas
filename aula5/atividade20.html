@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 1 </h1>
+<script>
+/* Crie um programa que leia o nome de 5 alunos de uma classe. 
+ * Leia as notas de duas provas de cada aluno, calcule a média da turma e imprima o resultado. 
+ * Por fim, diga quais alunos apresentam a média maior que a média da turma. */
+    alert("Leitor de nomes de alunos!");
+
+    const alunos = ["A", "B", "C", "D", "E"];
+    var notas1 = new Array(5);
+    var notas2 = new Array(5);
+    var medias = [0,0,0,0,0];
+    var somaMediaTurma = 0;
+    var mediaTurma = 0;
+    var maiorMedia = 0;
+    var notaAcimaMedia = 0;
+
+    for(var i=0; i<alunos.length; i++){
+        notas1[i] = +prompt("Digite a nota da prova 1 do aluno " + alunos[i] + ":");
+        notas2[i] = +prompt("Digite a nota da prova 2 do aluno " + alunos[i] + ":");
+    }
+
+   document.write("As notas da prova 1 são: " + notas1 + "<br>");
+   document.write("As notas da prova 2 são: " + notas2 + "<br>");
+
+    for(var i=0; i<notas1.length; i++){
+        medias[i] = (notas1[i]+notas2[i])/2;
+        document.write(`O aluno ${alunos[i]} teve média ${medias[i]}` + "<br>");
+    }
+
+    for(var i=0; i<medias.length; i++){
+        somaMediaTurma = somaMediaTurma + medias[i];
+    };
+
+    mediaTurma = somaMediaTurma/5;
+    document.write("A média da turma é de " + mediaTurma + "<br>");
+    maiorMedia = Math.max.apply(null,medias);
+    document.write(`A maior média da classe foi de ${maiorMedia}.` + "<br>");
+
+    for(var i=0; i<alunos.length; i++){
+        if(medias[i]>mediaTurma){
+            document.write(`O aluno ${alunos[i]} teve média de ${medias[i]}, acima da média da classe de ${mediaTurma}` + "<br>");
+        }
+        else{
+            document.write(`O aluno ${alunos[i]} teve média de ${medias[i]} não acima da média da classe de ${mediaTurma}` + "<br>");
+        }
+    }
+</script>

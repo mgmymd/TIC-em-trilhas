@@ -1,0 +1,86 @@
+<meta charset="UTF-8">
+
+<h1> Aula 5 - ARRAYS E MATRIZES: EXEMPLO PRÁTICO DE MATRIZ </h1>
+<script>
+/* Ex2: Crie um algoritmo que faça a soma e a multiplicação das duas matrizes abaixo.
+ *      var matrizA = [[1,2], [3,4]];
+ *      var matrizB = [[5,6],[7,8]];
+ * Imprima o resultado da soma e da multiplicação delas.
+ * 
+ * Regra de multiplicação: a linha 1 da matriz A é multiplicada por todos elementos da primeira coluna
+ *  da matriz B e temos o primeiro elemento; Para obter o segundo elemento usamos a linha 1 da matriz A novamente
+ * e multiplicamos por todos os elementos da coluna B
+ * Ex: [A] X [B]            A                        B                      RESULTADO
+ *                  a11     a12     a13           b11     b12           L1C1       L1C2
+ *                  a21     a22     a23           b21     b22           L2C1       L2C2
+ *                  -       -       -             b31     b31            -           -
+ * Obtido pela conta:
+ *              L1C1 = a11b11 + a12b21 + a13b31;
+ *              L1C2 = a11b12 + a12b22 + a13b32;
+ *              L2C1 = a21b11 + a21b21 + a21b31;
+ *              L2C2 = a21b12 + a22b22 + a23b31; 
+ * */
+    document.write("--------------------------------------------------------------------------" + "<br>")
+    document.write("Exemplo 2 - Soma e multiplicação de matrizes" + "<br>");
+    var matrizA = [[1,2], [3,4]];
+    var matrizB = [[5,6],[7,8]];
+    var matrizSoma=[[0,0][0,0]];
+    var matrizMulti=[[0,0],[0,0]];
+
+    document.write('Matriz A' + '<br>')
+    for (var linha=0; linha < matrizA.length; linha++) {
+            for(var coluna=0; coluna < matrizA.length; coluna++){
+                document.write( `|  ${matrizA[linha][coluna]} |`)
+            }
+        document.write("<br>" + "_______" + "<br>"); }
+
+    document.write('Matriz B' + '<br>')
+    for (var linha=0; linha < matrizB.length; linha++) {
+            for(var coluna=0; coluna < matrizB.length; coluna++){
+                document.write( `|  ${matrizB[linha][coluna]} |`)
+            }
+        document.write("<br>" + "_______" + "<br>"); }
+
+// Como queremos obter essas matrizes, já a criamos e inicializamos com o valor zero, para poder depois colocar os valores  
+   for (var linha=0; linha < matrizSoma.length; linha++) {
+            for(var coluna=0; coluna < matrizSoma.length; coluna++){
+                document.write( `|  ${matrizSoma[linha][coluna]} |`)
+            }
+        document.write("<br>" + "_______" + "<br>"); }
+
+// Soma, operação mais simples; Vamos precisar percorrer as matrizes e colunas usando um laço dentro de laço com FOR
+    for (var linha=0; linha < matrizA.length; linha++) {
+        for(var coluna=0; coluna < matrizA.length; coluna++){
+            matrizSoma[linha][coluna] = matrizA[linha][coluna] + matrizB[linha][coluna];
+        }
+    }
+
+// Imprimindo os resultados das duas matrizes obtidas    
+        document.write("MATRIZ SOMA" + "<br>");
+            for (var linha=0; linha < matrizSoma.length; linha++) {
+                    for(var coluna=0; coluna < matrizSoma.length; coluna++){
+                        document.write( `|  ${matrizSoma[linha][coluna]} |`)
+                    }
+                document.write("<br>" + "___________" + "<br>"); }
+                document.write("<br><br>");
+
+//Multiplicação seguindo a regra acima dita
+    for (var linha = 0; linha < matrizA.length; linha++) { // Percorrendo a linha da Matriz A
+        for (var coluna = 0; coluna < matrizB.length; coluna++) { //Percorre a coluna A
+            for (var k = 0; k < 2; k++) { //Percorre os elementos da multiplicação, k é a quantidade de elementos que vamos colocar na nova matriz
+                matrizMulti[linha][coluna] += matrizA[linha][k] * matrizB[k][coluna];
+/* P +=9 é a mesma coisa que usar um P = P + 9, então:
+ * Sendo como: matrizMulti[linha][coluna] = MatrizMulti[linha][coluna] + (matrizA[linha][k] * matrizB[k][coluna]); */
+            }
+        }
+    }
+
+// Imprimindo os resultados das duas matrizes obtidas    
+    document.write("MATRIZ MULTIPLICAÇÃO" + "<br>");
+            for(var linha=0; linha<matrizMulti.length; linha++){
+                document.write("<br>");
+                for(var coluna=0; coluna<matrizMulti.length; coluna++){
+                    document.write(matrizMulti[linha][coluna] + "\t");
+                }
+            }
+</script>

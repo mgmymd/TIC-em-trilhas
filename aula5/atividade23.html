@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 4 </h1>
+<script>
+/* Crie um programa que leia valores inteiros para a construção de uma matriz 3x4. 
+ * Após esses números serem lidos, analise se existem elementos negativos na matriz. 
+ * Caso exista, troque os números negativos por 0. Imprima as duas matrizes, a original e a modificada. */
+
+    var matrizOriginal = new Array(3);
+    matrizOriginal[0] = [1,-2,3];
+    matrizOriginal[1] = [-4,5,6];
+    matrizOriginal[2]= [7,8,-9];
+    matrizOriginal[3] = [10,-11,12];
+    
+    document.write('Matriz Original com números negativos!' + '<br>')
+    for(var i=0; i<matrizOriginal.length; i++){ //linha
+        for(var j=0; j<4; j++){ //coluna
+            document.write('|   ' + matrizOriginal[i][j] + '  |');
+        }
+        document.write('<br>'); //quebra fazendo ser apresentado 1 vetor por linha
+    }
+    document.write('<br><br>' + 'Matriz Nova com os números negativos trocados por zero' + '<br>')
+    var matrizNova = [['','',''],['','',''],['','',''],['','','']];
+
+    for(var linha=0; linha<matrizOriginal.length; linha++){
+        for(var coluna=0; coluna<4; coluna++){
+            if(matrizOriginal[linha][coluna]<0){
+                matrizNova[linha][coluna] = "0"
+            }
+            else{
+                matrizNova[linha][coluna] = matrizOriginal[linha][coluna]
+            }
+        }
+    }
+
+    for(var i=0; i<matrizNova.length; i++){ //linha
+        for(var j=0; j<matrizNova.length; j++){ //coluna
+            document.write('|   ' + matrizNova[i][j] + '  |');
+        }
+        document.write('<br>'); //quebra fazendo ser apresentado 1 vetor por linha
+    }
+
+</script>

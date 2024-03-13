@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 2 </h1>
+<script>
+/* Suponha que um certo estado possui 10 times de futebol em diferentes cidades.
+ * A prefeitura pretende promover um campeonato de futebol que tenha jogos de ida e volta.Isso pode valorizar a economia local. 
+ * Crie um programa que leia o nome dos times e gere uma tabela do campeonato.
+ * 
+ * Ps: não entendi como quer que seja a resolução */
+
+    var timesFutebol = new Array(10);
+    var tabelacampeonato = new Array(90);
+
+    for(var i=0; i<timesFutebol.length; i++){
+        timesFutebol[i] = prompt('Insira o nome do time: ');
+    }
+    document.write(timesFutebol + "<br>");
+
+    for(rodada=0; rodada<=10; rodada++){
+        var time2=1;
+        document.write(`Rodada ${rodada}: ${timesFutebol[rodada]} X ${timesFutebol[time2=time2+1]}` + "<br>") 
+        time2=time2+1;
+    }
+
+
+
+
+</script>

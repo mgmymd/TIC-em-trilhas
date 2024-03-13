@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 3 </h1>
+<script>
+/*Crie um programa que gere uma matriz 3x3. Leia todos os elementos da matriz e em seguida calcule:
+a) Soma total dos elementos.
+b) Soma dos elementos da linha 3.
+c) Soma dos elementos da coluna 2.
+d) Soma dos elementos da diagonal principal. */
+
+    var M = new Array(3);
+    var somaTotal = 0;
+    var somaLinha3 = 0;
+    var somaColuna2 = 0;
+    var somaDiagonal = 0;
+
+    for(var i=0; i<3; i++){
+        M[i] = [];
+        for(var j=0; j<3; j++){
+            M[i][j] = +prompt("Digite o valor M[" + i + "]" + "[]" + j + "]: ");
+            somaTotal = M[i][j] + somaTotal;
+
+            if(i==2){
+                somaLinha3 = M[i][j] + somaLinha3;
+            }
+            if(j==1){
+                somaColuna2 = M[i][j]+somaColuna2;
+            }
+            if(i==j){
+                somaDiagonal = M[i][j] + somaDiagonal;
+            }
+        }
+    }
+    
+    for(var i=0; i<3; i++){
+        for(var j=0; j<3; j++){
+            document.write(M[i][j] + "  ");
+        }
+        document.write("<br>")
+    }
+
+    document.write(`A soma total dos elementos é ${somaTotal}` + "<br>");
+    document.write(`A soma de todos os elementos da linha 3 é ${somaLinha3}` + "<br>");
+    document.write(`A soma de todos os elementos da coluna 2 é ${somaColuna2}` + "<br>");
+    document.write(`A soma de todos os elementos da diagonal é ${somaDiagonal}` + "<br>");
+
+</script>

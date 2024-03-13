@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h1>Aula 6 - Encontrando o menor valor! Maior e Menor vetores! </h1>
+<script>
+/* Escreva um algoritmo que leia 5 valores de um produto. 
+ * Faça a comparação entre eles e imprima o valor mais barato e o valor mais caro.
+ * Qual é o Maior valor ?
+ * Qual é o Menor valor?      */
+
+    alert("Encontrando o menor valor e maior valores");
+
+    var valorProduto = new Array(5);
+    var menor = 0; //ambas variáveis vão ser iniciadas com 1
+    var maior = 0;
+
+    for(var i=0; i<valorProduto.length; i++){
+        valorProduto[i] = +prompt("Digite o valor de " + (i+1) + "ºvalor: ");
+
+/* Digita o valor na posição inicial zero, vai ver esse valor na posição zero e comparar com o valor na 
+posição maior, para descobrir se esse produto é aquele de maior valor */
+    if(valorProduto[i] > valorProduto[maior]){
+                maior=i;
+    }
+/* Vai procurar qual é o menor valor existente, inicialmente na posição zero e depois na posição 1, indo em 
+sequência. Se for menor passa a ser a posição i e, se for maior é a posição i */
+        if(valorProduto[i] < valorProduto[menor]){
+            menor=i;
+        }
+    }
+
+    document.write(valorProduto + "<br>");
+    document.write("O menor valor do produto é: " + valorProduto[menor] + "<br>");
+    document.write("O maior valor do produto é: " + valorProduto[maior] + "<br>");
+
+</script>

@@ -1,0 +1,76 @@
+<meta charset="UTF-8">
+
+<h1> DESAFIO: JOGO DA VELHA </h1>
+<script>
+    var vezDaJogada = 0;
+    var estadoDoJogo = 0;
+    var vencedor, linha, coluna;
+
+    var tabuleiro = [    ["", "", ""],
+                         ["", "", ""],
+                         ["", "", ""],    ];
+
+    const MENSAGENS = { VITORIA: `O jogador ${vencedor} venceu! Parabéns!`,
+                        EMPATE: "FIM DE JOGO! O jogo empatou!!",
+                        JOGADA_INVALIDA: "Jogada inválida! Tente novamente.",    };
+
+// Ações do tabuleiro
+    function exibirTabuleiro() {
+        for (let linha=0; linha < tabuleiro.length; linha++) {
+            for(let coluna=0; coluna < tabuleiro.length; coluna++){
+                document.write( `|  ${tabuleiro[linha][coluna]} |`)
+            }
+        document.write("<br>" + "___________" + "<br><br>");       
+        }
+    }
+
+    function jogar(tabuleiro, jogador, vezDaJogada) {
+        linha = prompt(`Participante ${jogador}, escolha a linha da rodada ${vezDaJogada}:`);
+        coluna = prompt(`Participante ${jogador}, escolha a coluna da rodada ${vezDaJogada}:`);
+    
+        tabuleiro[linha][coluna] = jogador;
+    }
+
+// Definindo os símbolos dos jogadores
+    alert("JOGO DA VELHA!");
+
+    var i = 0;
+    var JOGADOR2;
+        while(i==0){
+            var JOGADOR1 = prompt("Escolha X ou O para usar durante o jogo: ");
+
+            if(JOGADOR1 != "X" && JOGADOR1 != "O"){
+                alert("Símbolo inválido. Por favor, escolha entre X ou O!");
+            }
+            else{
+                if (JOGADOR1=="X"){    JOGADOR2 = "O";  }
+                else{  var JOGADOR2 = "X";    }
+                document.write(`O símbolo do Jogador 1 é: ${JOGADOR1}. O símbolo do Jogador 2 é: ${JOGADOR2}.` + "<br>" + "<br>")
+                i = 1;
+            }
+        }
+
+// Execução do jogo: Enquanto o estadoDoJogo for zero executar os pedidos de posição de linha e coluna e verificações
+    while(estadoDoJogo==0){
+        document.write("<br>" + `Rodada ${vezDaJogada}!` + "<br><br>");
+        document.write(`Jogador ${JOGADOR1}` + "<br><br>");
+        jogar(tabuleiro, JOGADOR1, vezDaJogada);
+        exibirTabuleiro();
+
+        document.write(`Jogador ${JOGADOR2}` + "<br><br>");
+        jogar(tabuleiro, JOGADOR2, vezDaJogada);
+        exibirTabuleiro();
+
+        // Verificar se venceu: estadoDoJogo=1;
+
+        // Verificar se empatou: estadoDoJogo=1;
+
+        //Verificar se não: estadoDoJogo = 0; continue no laço
+
+        vezDaJogada++;
+    }
+
+    // Quando o estadoDoJogo for igual a 1, sair do lado
+    //      alert(MENSAGENS.VITORIA)
+    //      alert(MENSAGENS.EMPATE)
+</script>

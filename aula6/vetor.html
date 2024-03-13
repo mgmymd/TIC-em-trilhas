@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<h1>Aula 6 - Encontrando o menor valor! VETOR </h1>
+<script>
+/* Com o uso de vetores vamos comparar as posições.
+ * Uma outra forma é escrever o código através de um vetor:
+ *       var valorProduto = new Array(5);
+ *       Matendo a comparação de valores:
+ *       if (valorProduto[i] < valorProduto[menor]) {
+ *           menor <- i
+ *       }      */
+
+    alert("Encontrando o menor valor com VETORES!");
+
+    var valorProduto = new Array(5);
+    var menor = 0;
+
+    for(var i=0; i<valorProduto.length; i++){
+        valorProduto[i] = +prompt("Digite o valor de " + (i+1) + "ºvalor: ");
+        
+        if(valorProduto[i]<valorProduto[menor]){
+            menor=i;
+        }
+    }
+    document.write(valorProduto + "<br>");
+    document.write("O menor valor do produto é: " + valorProduto[menor]);
+</script>

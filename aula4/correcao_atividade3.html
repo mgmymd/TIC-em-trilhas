@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<h1> Aula 4 - Funções - Atividade 3 </h1>
+<script>
+/* Ex3: Faça um algoritmo para exibir os 10 primeiros elementos de uma série de Fibonacci usando a função
+ * com passagem de parâmetros; */ 
+    alert("Sequência de Fibonnaci!");
+
+    function fibonnaci(n1,n2){
+        var fib = n1 + " " + n2;
+        var n3 = 0;
+        var contador = 1;
+        
+        while(contador<=10){
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+            fib = fib + " " + n3;
+
+            contador++;
+        }
+        document.write(fib + "<br>")
+    }
+
+    const numero1=0;
+    const numero2=1;
+    fibonnaci(numero1,numero2);
+
+</script>

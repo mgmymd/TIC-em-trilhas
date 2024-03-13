@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 4 </h1>
+<script>
+/* Crie um programa que leia valores inteiros para a construção de uma matriz 3x4. 
+ * Após esses números serem lidos, analise se existem elementos negativos na matriz. 
+ * Caso exista, troque os números negativos por 0. Imprima as duas matrizes, a original e a modificada. */
+
+    var M = new Array(3);
+    for(var i=0; i<3; i++){
+        M[i] = []; //criamos a matriz na posição zero e dentro dela vai ter outra
+        for(var j=0; j<3; j++){
+            M[i][j] = +prompt("Digite o valor M[" + i + "]" + "[]" + j + "]: ");
+        }
+    }
+
+    document.write("Matriz Principal: " + "<br>");
+    for(var i=0; i<3; i++){
+        for(var j=0; j<4; j++){
+            document.write(M[i][j]+"    ");
+        }
+        document.write("<br>");
+    }
+
+    document.write("<br>");
+    document.write("Matriz Modificada:  " + "<br>");
+    for(var i=0; i<3; i++){
+        for(var j=0; j<4; j++){
+            if(M[i][j]<0){
+                M[i][j]=0;
+            }
+        document.write(M[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+</script>

@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 3 </h1>
+<script>
+/*Crie um programa que gere uma matriz 3x3. Leia todos os elementos da matriz e em seguida calcule:
+a) Soma total dos elementos.
+b) Soma dos elementos da linha 3.
+c) Soma dos elementos da coluna 2.
+d) Soma dos elementos da diagonal principal. */
+
+    const matrizA = new Array(3);
+
+    for(var i=0; i<3; i++){
+        matrizA[i] = [];
+        for(var j=0; j<3; j++){
+            matrizA[i][j] = +prompt("Digite o valor M[" + i + "]" + "[]" + j + "]: ");
+    }
+}
+
+    for(var i=0; i<matrizA.length; i++){ //linha
+        for(var j=0; j<matrizA.length; j++){ //coluna
+            document.write('|   ' + matrizA[i][j] + '  |');
+        }
+        document.write('<br>') //quebra fazendo ser apresentado 1 vetor por linha
+    }
+
+// A - Soma total de todos os elementos
+    var somaTotal = 0;
+
+    for(var linha=0; linha<matrizA.length; linha++){
+        for(var coluna=0; coluna<matrizA.length; coluna++){
+            somaTotal = somaTotal + matrizA[linha][coluna]
+        }
+    }
+    document.write(`O valor da soma total é de: ${somaTotal}` + '<br>');
+
+// B - Soma dos elementos da linha 3
+    var somaLinhaTres = 0;
+
+    for(var linha=2; linha<matrizA.length; linha++){
+        for(var coluna=0; coluna<matrizA.length; coluna++){
+            somaLinhaTres = somaLinhaTres + matrizA[2][coluna];
+        }
+    }
+    document.write(`O valor da soma de todos os elementos da linha 3 é: ${somaLinhaTres}` + '<br>');
+
+// C - Soma dos elementos da coluna 2
+    var somaColunaDois = 0;
+
+    for(var linha=0; linha<matrizA.length; linha++){
+        somaColunaDois = somaColunaDois + matrizA[linha][1]
+    }
+    document.write(`O valor da soma de todos os elementos da coluna 2 é: ${somaColunaDois}` + '<br>');
+
+// D - Soma dos elementos da diagonal principal
+    var somaDiagonal = matrizA[0][0] + matrizA[1][1] + matrizA[2][2]
+    document.write(`O valor da soma de todos os elementos da diagonal principal é: ${somaDiagonal}` + '<br>');
+
+</script>
