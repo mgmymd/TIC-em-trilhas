@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 2 </h1>
+<script>
+/* Construa um algoritmo que leia 50 valores inteiros e positivos de forma randômica e faça as seguintes tarefas:
+ *          Encontre o maior valor
+ *          Encontre o menor valor
+ *          Calcule a média dos números lidos
+ * OBS: Nos slides “Dicas” é apresentado formas de calcular os valores randômicos */
+    var valores = new Array(50);
+    var maior = 1;
+    var menor = 1;
+    var somaMedia = 0;
+    var media = 0;
+
+    function getRndInteger(min,max){
+        return  Math.floor(Math.random () * (max - min)) + min; }
+    
+    for(var i=0; i<valores.length; i++){
+        valores[i] = getRndInteger(0,100);
+    }
+
+    for(var i=0; i<valores.length; i++){
+        if(i==0){
+            menor=i;
+        }
+        else{
+            if(valores[i]<valores[menor-1]){
+                menor =1;
+            }
+        }
+    }
+
+    for(var i = 0; i<valores.length; i++){
+        if(i==0){
+            maior=i;
+        }
+        else{
+            if(valores[i]<valores[i-1]){
+                maior=i;
+            }
+        }
+    }
+
+    for(var i=0; i<valores.length; i++){
+        somaMedia = somaMedia + valores[i];
+    }
+        media = somaMedia/50;
+
+    document.write(`O maior valor é: ${valores[maior]}` + "<br>");
+    document.write(`O menor valor é: ${valores[menor]}` + "<br>");
+    document.write(`A média de todos os 50 valores randomicos é de: ${media}` + "<br>");
+
+</script>

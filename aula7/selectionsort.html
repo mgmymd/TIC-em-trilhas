@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1> Selection Sort: Aula 7 - Selecionando e ordenando </h1>
+<script>
+/* EXEMPLO2:    Crie o Código que ordene os valores dos carros citados anteriormente. Observe que dois 
+ * laços são considerados:
+ *          i: 1 até 4 -> Porque já vamos selecionar o primeiro valor que é considerado o menor valor inicialmente
+ * e depois vamos comparar o 2 com esse valor de 1, comparar o valor de 3 com 1 etc, até chegar ao último
+ * Pegar um número e comparar com o próximo na sua lista.
+ *          j: i+1 até 5   */
+    alert("Selection sort: Selecionando e ordenando!");
+
+    var v = new Array(5);
+    for(var i=1; i<6; i++){
+        v[i] = +prompt(`Digite o ${i}º número: `);
+    }
+// Valores: 130     52     200      71      85
+// Comparação de elementos passados acima
+    for(var i=1; i<5; i++){ // Primeiro laço o i=1, então o menor vai ser 1
+        var menor = i;      //  menor =1
+        for(var j = i+1; j<6; j++){     //  j=i+1 --> j=1+1 --> j=2
+            if(v[j] < v[menor]){        //  Se v[j] < v[menor] --> v[2] < v[1] --> 52 < 130 ?
+                menor = j;          //  Então, menor = 2
+            }
+        }
+        if(menor!=1){       // menor = 2, é diferente de 1, então executará as linhas abaixo
+            var auxiliar = v[i];    // auxiliar = v[i] --> valor será 130
+            v[i] = v[menor];        // v[1] = v[menor] --> v[1] = v[2] --> v[1] = 52 
+            v[menor] = auxiliar;    // v[2] = auxiliar --> v[2] = 130
+        }
+    }
+
+// Escrever na ordem correta os elementos
+    for(var i=1; i<6; i++){
+        document.write(v[i] + "     ");
+    }
+    
+</script>

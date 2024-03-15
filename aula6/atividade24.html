@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 1 </h1>
+<script>
+/* Escreva um algoritmo que leia o nome de 4 professores, a quantidade de Hora/Aula desses professores e
+ * o valor da Hora/Aula.
+ * Imprima o salário de todos os professores e imprima o professor que tem o maior salário. */
+
+    var professores = new Array(4);
+    var valorHoraAula = new Array(4);
+    var quantidadeHoraAula = new Array(4);
+    var salarios = new Array(4);
+    var maiorSalario = 1;
+
+    for(var i=0; i<4; i++){
+        professores[i] = prompt('Entre com o nome do professor ' + i + ' que deseja cadastrar: ');
+        valorHoraAula[i] = +prompt('Entre com o valor Hora/Aula do professor ' + i + ' :');
+        quantidadeHoraAula[i] = +prompt('Entre com a quantidade de Hora/Aula que o professor ' + i + ' dá:');
+        salarios[i] = valorHoraAula[i]*quantidadeHoraAula[i];
+
+        document.write(`O professor ${professores[i]} tem o salário de R$${salarios[i]}.` + '<br>');
+    }
+
+    for(var i=0; i<salarios.length; i++){
+        if(i==0){
+                maiorSalario=i;
+        }   else{
+            if(salarios[i]>salarios[i-1]){
+                maiorSalario=i;
+            }
+        }
+    }
+    document.write(`O maior salário é de: ${salarios[maiorSalario]}, do professor ${professores[maiorSalario]}`)
+
+</script>

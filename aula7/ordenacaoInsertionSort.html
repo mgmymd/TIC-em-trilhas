@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+
+<h1> Insertion Sort: Aula 7 - Selecionando e ordenando </h1>
+<script>
+/* Imagine ordenar a seguinte matriz, relacionado ao preço dos carros.
+ *               130 - 52 -200 - 71 - 85
+ * O primeiro elemento na matriz é considerado classificado.
+ * Pegue o segundo elemento e guarde-o separadamento na chave. Compare a chave com o primeiro elemento.
+ * Se o 1 elemento for maior que a chave, então a chave é colocado na frente do primeiro elemento.
+ * Agora, os dois primeiros elementos são classificados. Pegue o terceiro elemento e compare-o com os 
+ * elementos à esquerda dele. Se não houver nenhum elemento menor que ele, deixe-o no mesmo lugar. 
+ * Agora, os três primeiros elementos são classificados. Repita os mesmos passos, para classificar os
+ * demais elementos. Agora, os quatroprimeiros elementos são classificados. A chave é comparada com todos 
+ * os elementos e posicionada corretamente
+ * 
+ * EXEMPLO 1: Crie o Código que ordene os valores dos carros citados anteriormente. 
+ * Observe que dois laços são considerados:
+ *          i: 2 até 6 -> Pq na verdade, o primeiro elemento já é considerado selecionado, então vamos 
+ * selecionar o segundo número para conseguir comparar com o primeiro número já classificado.
+ *          j: i-1 até 6 -> comparamos o 2 com o primeiro elemento.
+ * Os seguintes valores que serão utilizados para comparações:
+ *          Honda: 130000       Mobi: 52000
+ *          Fusion: 200000      Peugeot: 71000      HB20: 85000
+ * */
+    alert('Insertion Sort: Selecionando e ordenando!');
+
+    var v = new Array(5);   //Criamos um vetor de 5 posições
+    for(var i=0; i<6; i++){ //Apenas para digitar os 5 valores que irão compor o array declarado acima;
+        v[i] = +prompt(`Digite o ${i}º número: `);      
+    }
+
+    for(var i=2; i<6; i++){ //Laço que vai ser a lógica de comparação do elemento selecionado com os
+    // elementos anteriores; Inicia com a variável de i=2 e anda de 2 até a posição 5;
+    //                  Os valores pesquisados: 130, 52, 200, 85, 71
+        var aux = v[i]; //Iniciamos com i=2, então quer dizer que a variável auxiliar (aux) vai receber         | Agora na segunda iteração, o i=3, então o aux = v[3] = 200
+        // o v na posição 2, v[2], isto é, o valor 52.                                                          |       j = 3-1 = 2
+        var j=i-1;      // Agora o j é a posição do i-1. Ficando: j=2-1 --> j=1. J será igual a posição 1,      |       aux 200 < v[j] 52 ? Não. O auxiliar não é menor do que 52
+        // que é a posição que vale 130 no array v. O j passa a valer 1.                                        | O laço será pulado inteiro e vai para a linha de v[j+1] = aux;
+        while(aux<v[j]){ //Enquanto o auxiliar (aux), que vale 52, for menor do que v[j]=v[1]=130, v[1]         |
+        // de valor 130, ficando: aux 52 < v[k] 130. Se 52 < 130 é verdadeiro, executa abaixo.                  |
+            v[j+1] = v[j];    //v[2] = 130 --> O 130 vai para a posição 2                                       |
+            j = j-1;       //No j vamos subtrair de 1, mas j é 1, então j passará a valer zero                  |
+                if(j==0){ // Se j for zero                                                                      |
+                    break; // sai do laço e realiza a operação na linha 47                                      |
+                }                                                                                               
+        }
+        v[j+1]=aux; //Essa operação quer dizer: v[0+1]=v[1], o valor do auxiliar é 52.                          |       v[2+1] = v[3] ---> v[3] = 200
+        // Mostrando que agora o v[1] é o valor do auxiliar.                                                    |   Não mudamos a posição, do valor, por não ser um valor abaixo. Ele permanece na posição 3 com o valor 200
+    }
+
+    for(var i=1; i<6; i++){
+        document.write(v[i] + "      ");
+    }
+
+</script>

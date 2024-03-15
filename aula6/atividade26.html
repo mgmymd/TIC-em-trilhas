@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 3 </h1>
+<script>
+/* Faça um programa que leia um conjunto de dados contendo a altura e o sexo (masculino, feminino) de 5 pessoas. 
+ * Calcule a maior e a menor altura do grupo; 
+ * Calcule a média de altura das mulheres e a média de altura dos homens.
+ * Imprima o resultado. */
+    var pessoas = new Array(5);
+    var sexo = new Array(5);
+    var altura = new Array(5);
+    var qtdHomens = 0;
+    var qtdMulheres =0;
+    var somaAlturaHomens = 0;
+    var somaAlturaMulheres = 0;
+    var mediaMulheres = 0;
+    var mediaHomens = 0;
+    var maiorAltura = 1;
+    var menorAltura = 1;
+
+    for(var i=0; i<pessoas.length; i++){
+        pessoas[i] = prompt('Insira o nome da pessoa: ');
+        sexo[i] = prompt('Insira o sexo da pessoa (M/F): ');
+        altura[i] = +prompt('Insira a altura da pessoa: ');
+
+        if(sexo[i]=="M"){
+            qtdHomens = qtdHomens + 1;
+            somaAlturaHomens = somaAlturaHomens + altura[i];
+        }        else{
+            qtdMulheres = qtdMulheres + 1;
+            somaAlturaMulheres = somaAlturaMulheres + altura[i];
+        }
+        mediaHomens = somaAlturaHomens/qtdHomens;
+        mediaMulheres = somaAlturaMulheres/qtdMulheres;
+
+        if(i==0){
+            maiorAltura = i;
+            menorAltura = i;
+        }
+        else {
+            if(altura[i]>altura[maiorAltura]){
+                maiorAltura = i;
+            }
+            else if(altura[i]<altura[menorAltura]){
+                menorAltura = i;
+            }
+        }
+
+        document.write(`A pessoa de nome ${pessoas[i]}, do sexo ${sexo[i]}, tem ${altura[i]} cm.` + '<br>')
+    }
+
+        document.write(`A média de altura das mulheres é de ${mediaMulheres} cm.` + '<br>');
+        document.write(`A média de altura dos homens é de ${mediaHomens} cm.` + '<br>');
+        document.write(`A menor altura é de ${altura[menorAltura]} cm.` + '<br>');
+        document.write(`A maior altura é de ${altura[maiorAltura]} cm.` + '<br>');
+</script>

@@ -10,17 +10,17 @@
     alert("Encontrando o menor valor e maior valores");
 
     var valorProduto = new Array(5);
-    var menor = 0; //ambas variáveis vão ser iniciadas com 1
-    var maior = 0;
+    var menor = 1; //ambas variáveis vão ser iniciadas com 1
+    var maior = 1;
 
     for(var i=0; i<valorProduto.length; i++){
         valorProduto[i] = +prompt("Digite o valor de " + (i+1) + "ºvalor: ");
 
 /* Digita o valor na posição inicial zero, vai ver esse valor na posição zero e comparar com o valor na 
 posição maior, para descobrir se esse produto é aquele de maior valor */
-    if(valorProduto[i] > valorProduto[maior]){
+        if(valorProduto[i] > valorProduto[maior]){
                 maior=i;
-    }
+        }
 /* Vai procurar qual é o menor valor existente, inicialmente na posição zero e depois na posição 1, indo em 
 sequência. Se for menor passa a ser a posição i e, se for maior é a posição i */
         if(valorProduto[i] < valorProduto[menor]){
