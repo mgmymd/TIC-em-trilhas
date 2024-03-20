@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 3 </h1>
+<script>
+/* Crie um programa que faça um jogo da mega sena de forma randômica. 
+ * Os números devem ser escolhidos de forma aleatória. Imprima os números em ordem crescente.*/
+  var dezena = new Array(6);
+  var aux = 0;
+
+  for(var i=0; i<dezena.length; i++){
+    dezena[i] = Math.floor(Math.random()*61);
+  }
+
+  for(var i=0; i<dezena.length-1;i++){
+    for(var j=i+1; j<dezena.length; j++){
+        if(dezena[i]>dezena[j]){
+            aux = dezena[i];
+            dezena[i] = dezena[j];
+            dezena[j] = aux;
+        }
+    }
+  }
+
+  for(var i=0; i<dezena.length; i++){
+    document.write(dezena[i] + "        ");
+  }
+
+</script>

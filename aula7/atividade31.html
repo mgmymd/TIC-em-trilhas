@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 4 </h1>
+<script>
+/* Construa um algoritmo que leia uma sequência de 20 números aleatórios entre 0 e 1000. 
+ * Faça sua ordenação e apresente o resultado na tela.*/
+    var numeros = new Array(20);
+
+    function getRndInteger(min,max){
+        return  Math.floor(Math.random () * (max - min)) + min; 
+    }
+    
+    for(var i=1; i<21; i++){
+        numeros[i] = getRndInteger(0,100);
+    }
+
+    document.write("Ordem de entrada dos números!" + "<br>");
+    for(var i=1; i<21; i++){
+    document.write(numeros[i] + "       ");
+    }
+
+    document.write("<br><br>"+ "Ordem crescente" + "<br>");
+    for(var i=1; i<20; i++){
+        var menor = i;
+
+        for(var j=i+1; j<21; j++){
+            if(numeros[j]<numeros[menor]){
+                menor = j;
+            }
+        }
+        if(menor!=1){
+            var auxiliar = numeros[i];
+
+            numeros[i] = numeros[menor];
+            numeros[menor]=auxiliar;
+        }
+    }
+
+    for(var i=1; i<21; i++){
+        document.write(numeros[i] + "       ")
+    }
+
+</script>

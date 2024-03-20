@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 3 </h1>
+<script>
+/* Crie um programa que faça um jogo da mega sena de forma randômica. 
+ * Os números devem ser escolhidos de forma aleatória. Imprima os números em ordem crescente.*/
+  var valores = new Array(6);
+
+  function getRndInteger(min,max){
+        return  Math.floor(Math.random () * (max - min)) + min; 
+  }
+    
+  for(var i=1; i<7; i++){
+      valores[i] = getRndInteger(0,100);
+  }
+
+  document.write("Ordem de entrada dos números!" + "<br>");
+  for(var i=1; i<7; i++){
+    document.write(valores[i] + "<br>");
+  }
+
+  document.write("<br>"+ "Ordem crescente dos números!" + "<br>");
+  for(var i=1; i<6; i++){   // Percorrer espaço por espaço do vetor
+    var menor = i;    // Supoe-se inicialmente que o menor valor que existe é o da posição 1
+    for(var j=i+1; j<7; j++){
+      if(valores[j]<valores[menor]){
+        menor=j;
+      }
+    }
+
+    if(menor!=1){
+      var auxiliar = valores[i];
+      
+      valores[i] = valores[menor];
+      valores[menor]=auxiliar;
+    }
+  }
+
+  for(var i=1; i<7; i++){
+        document.write(valores[i] + "     ");
+    }
+
+</script>

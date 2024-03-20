@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 3 </h1>
+<script>
+/* Faça um programa que leia um conjunto de dados contendo a altura e o sexo (masculino, feminino) de 5 pessoas. 
+ * Calcule a maior e a menor altura do grupo; 
+ * Calcule a média de altura das mulheres e a média de altura dos homens.
+ * Imprima o resultado. */
+    var altura = new Array(5);
+    var sexo = new Array(5);
+    var cont = 1;
+    var maior = 0;
+    var menor = 10;
+    var nhomens = 0;
+    var nmulheres = 0;
+    var alturaM = 0;
+    var alturaH = 0;
+    var mediaMulheres = 0;
+    var mediaHomens = 0;
+
+    do{
+        altura[cont] = +prompt("Digite a altura: ");
+        sexo[cont] = +prompt("Digite o sexo M ou F: ");
+
+    //Análise da altura:
+        if(altura[cont]>maior){
+            maior = altura[cont];
+        }
+
+        if(altura[cont]<menor) {
+            menor = altura[cont];
+        }
+    //Análise de sexo:
+        if(sexo[cont]=="m"){
+            nhomens = nhomens + 1;
+            alturaH = alturaH + altura[cont];
+        }
+        else{
+            nmulheres = nmulheres + 1;
+            alturaM = alturaM + altura[cont];
+        }
+        cont = cont + 1;
+    }
+    while(cont<6);
+
+    mediaHomens = alturaH / nhomens;
+    mediaMulheres = alturaM / nmulheres;
+
+    document.write("O número de homens é de: " + nhomens + "<br>");
+    document.write("O número de mulheres é: " + nmulheres + "<br>");
+    document.write("A média de altura das mulheres é de: " + mediaMulheres + "<br>");
+    document.write("A meédia de altura dos homens é de: " + mediaHomens + "<br>");
+
+</script>

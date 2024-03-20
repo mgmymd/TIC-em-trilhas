@@ -39,10 +39,11 @@
         while(aux<v[j]){ //Enquanto o auxiliar (aux), que vale 52, for menor do que v[j]=v[1]=130, v[1]         |
         // de valor 130, ficando: aux 52 < v[k] 130. Se 52 < 130 é verdadeiro, executa abaixo.                  |
             v[j+1] = v[j];    //v[2] = 130 --> O 130 vai para a posição 2                                       |
-            j = j-1;       //No j vamos subtrair de 1, mas j é 1, então j passará a valer zero                  |
-                if(j==0){ // Se j for zero                                                                      |
-                    break; // sai do laço e realiza a operação na linha 47                                      |
-                }                                                                                               
+            j = j-1;  
+                 //No j vamos subtrair de 1, mas j é 1, então j passará a valer zero                  |
+            if(j==0){ // Se j for zero                                                                      |
+                break; // sai do laço e realiza a operação na linha 47                                      |
+            }                                                                                               
         }
         v[j+1]=aux; //Essa operação quer dizer: v[0+1]=v[1], o valor do auxiliar é 52.                          |       v[2+1] = v[3] ---> v[3] = 200
         // Mostrando que agora o v[1] é o valor do auxiliar.                                                    |   Não mudamos a posição, do valor, por não ser um valor abaixo. Ele permanece na posição 3 com o valor 200

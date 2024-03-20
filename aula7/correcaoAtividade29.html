@@ -1,0 +1,53 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 2 </h1>
+<script>
+/* Escreva um algoritmo que leia um vetor com 8 valores numéricos positivos e negativos. 
+ * Ordene esses números de forma crescente e de forma decrescente. Imprima o seguinte resultado:
+                a) Vetor digitado
+                b) Vetor em ordem Crescente
+                c) Vetor em ordem decrescente       */
+
+    var numeros = new Array(8);
+
+    document.write("Ordem digitada dos valores!" + "<br>");
+    for(var i=0; i<9; i++){
+        numeros[i] = +prompt(`Digite o ${i}º valor: `);
+
+        document.write(numeros[i] + "         " + "<br>");
+    }
+
+    document.write("<br><br>"+ "Ordem crescente!" + "<br>");
+    for(var c=1; c<8; c++){
+        for(var k=c+1; k<9; k++){   // a primeira comparação tem que ser a posição 1 com a 2, por isso usamos k=c+1
+            if(numeros[c]>numeros[k]){  // Comparação responsável por verificar se o número da posição c é maior do que a K
+                var auxiliar = numeros[c];
+
+                numeros[c] = numeros[k];
+                numeros[k] = auxiliar;
+            }
+        }
+    }
+
+    for(var c=1; c<9;c++){
+        document.write(numeros[c]+"     " + "<br>");
+    }
+
+    document.write("<br><br>"+ "Ordem decrescente!" + "<br>");
+    for(var c=1; c<8; c++){
+        for(var k=c+1; k<9; k++){   // a primeira comparação tem que ser a posição 1 com a 2, por isso usamos k=c+1
+            if(numeros[c]<numeros[k]){  //COmparação decrescente, se a variável C é menor do que o valor da posição K
+                var auxiliar = numeros[c];
+
+                numeros[c] = numeros[k];
+                numeros[k] = auxiliar;
+            }
+        }
+    }
+
+    for(var c=1; c<9;c++){
+        document.write(numeros[c]+"     " + "<br>");
+    }
+
+
+</script>

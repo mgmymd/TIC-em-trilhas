@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+
+<h1> Atividade 2 </h1>
+<script>
+/* Escreva um algoritmo que leia um vetor com 8 valores numéricos positivos e negativos. 
+ * Ordene esses números de forma crescente e de forma decrescente. Imprima o seguinte resultado:
+                a) Vetor digitado
+                b) Vetor em ordem Crescente
+                c) Vetor em ordem decrescente       */
+
+    var vetor = new Array(8);
+    for(var i=0; i<9; i++){
+        vetor[i] = +prompt(`Digite o ${i}º valor: `);
+    }
+
+    document.write("Ordem digitada dos valores!" + "<br>");
+    for(var i=1; i<9; i++){
+        document.write(vetor[i] + "         " + "<br>");
+    }
+    
+    document.write("<br>"+ "Ordem crescente dos valores!" + "<br>");
+    for(var i=2; i<9; i++){ // Andar pelas posições do vetor
+        var auxiliar = vetor[i];
+        var j=i-1;
+
+        while(auxiliar<vetor[j]){ // Organizar em ordem crescente
+            vetor[j+1] = vetor[j];
+            j = j-1;
+
+            if(j==0){
+                break;    }    }
+    
+        vetor[j+1]=auxiliar;
+    }
+
+    for(var i=1; i<9; i++){
+        document.write("Na posição " + i + " há o valor " + vetor[i] + "<br>");
+    }
+
+    document.write("<br>"+ "Ordem decrescente dos valores!" + "<br>");
+    for(var i=2; i<9; i++){ // Andar pelas posições do vetor 1 por 1
+        var auxiliar = vetor[i];
+        var j=i-1;
+
+        while(auxiliar>vetor[j]){ // Organizar em ordem descrescente
+            vetor[j+1] = vetor[j];
+            j = j-1;
+
+            if(j==0){
+                break;    }    }
+    
+        vetor[j+1]=auxiliar;
+    }
+    
+    for(var i=1; i<9; i++){
+        document.write("Na posição " + i + " há o valor " + vetor[i] + "<br>");
+    }
+</script>
