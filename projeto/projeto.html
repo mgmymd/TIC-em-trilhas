@@ -2,21 +2,19 @@
 
 <h1> DESAFIO: JOGO DA VELHA </h1>
 <script>
+    const MENSAGENS = { VITORIA: `O jogador ${vencedor} venceu! Parabéns!`,
+                        EMPATE: "O jogo empatou!!",
+                        JOGADA_INVALIDA_JA_OCUPADO: "Jogada inválida! A posição já está ocupada. Tente novamente.",
+                        JOGADA_INVALIDA_NAO_EXISTE: "Jogada inválida! A linha e/ou coluna requisitada não existe. Tente novamente."};
+    var tabuleiro = [    ["", "", ""],
+                         ["", "", ""],
+                         ["", "", ""]   
+                    ];
     var vezDaJogada = 1;
     var estadoDoJogo = 0;
     var vencedor, linha, coluna;
     var contadorX=0;
     var contadorO=0;
-
-    var tabuleiro = [    ["", "", ""],
-                         ["", "", ""],
-                         ["", "", ""]   
-                    ];
-
-    const MENSAGENS = { VITORIA: `O jogador ${vencedor} venceu! Parabéns!`,
-                        EMPATE: "O jogo empatou!!",
-                        JOGADA_INVALIDA_JA_OCUPADO: "Jogada inválida! A posição já está ocupada. Tente novamente.",
-                        JOGADA_INVALIDA_NAO_EXISTE: "Jogada inválida! A linha e/ou coluna requisitada não existe. Tente novamente." };
 
     function exibirTabuleiro() {
         for (let linha=0; linha < tabuleiro.length; linha++) {
@@ -31,11 +29,14 @@
         var i=0;
         while(i==0){
         alert("A numeração das linhas e colunas do tabuleiro seguem este esquema:\n[0,0][0,1][0,2]\n[1,0][1,1][1,2]\n[2,0][2,1][2,2]");
-        linha = prompt(`Rodada ${vezDaJogada}. Participante ${jogador}, escolha a linha [0, 1 ou 2] que deseja jogar:`);
-        coluna = prompt(`Rodada ${vezDaJogada}. Participante ${jogador}, escolha a coluna [0, 1 ou 2] que deseja jogar:`);
+        linha = +prompt(`Rodada ${vezDaJogada}. Participante ${jogador}, escolha a linha [0, 1 ou 2] que deseja jogar:`);
+        coluna = +prompt(`Rodada ${vezDaJogada}. Participante ${jogador}, escolha a coluna [0, 1 ou 2] que deseja jogar:`);
     
         // Verificação da jogada
-        if(tabuleiro[linha][coluna]!=""){
+        if(linha>=3 || coluna>=3){
+            alert(MENSAGENS.JOGADA_INVALIDA_NAO_EXISTE);
+        }
+        else if(tabuleiro[linha][coluna]!=""){
             alert(MENSAGENS.JOGADA_INVALIDA_JA_OCUPADO);
         }
         else{
@@ -74,7 +75,7 @@
             }
         }
 
-// Execução do jogo: Enquanto o estadoDoJogo for zero executar os pedidos de posição de linha e coluna e verificações
+// Execução do jogo:
     while(estadoDoJogo==0){
     // Jogador 1
         document.write("<br><br>" + (`Rodada ${vezDaJogada}!`).bold() + "<br><br>");
@@ -103,7 +104,4 @@
         vezDaJogada++;
     }
 
-    // Quando o estadoDoJogo for igual a 1, sair do lado
-    //      alert(MENSAGENS.VITORIA)
-    //      alert(MENSAGENS.EMPATE)
 </script>
