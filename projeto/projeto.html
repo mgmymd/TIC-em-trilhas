@@ -9,9 +9,6 @@
     var vezDaJogada = 1;
     var estadoDoJogo = 0;
     var linha, coluna;
-    const MENSAGENS = { EMPATE: "O jogo empatou!!",
-                        JOGADA_INVALIDA_JA_OCUPADO: "Jogada inválida! A posição já está ocupada. Tente novamente.",
-                        JOGADA_INVALIDA_NAO_EXISTE: "Jogada inválida! A linha e/ou coluna requisitada não existe. Tente novamente."};
 
     function exibirTabuleiro() {
         for (let linha=0; linha < tabuleiro.length; linha++) {
@@ -29,17 +26,15 @@
         linha = +prompt(`Rodada ${vezDaJogada}. Participante ${jogador}, escolha a linha [0, 1 ou 2] que deseja jogar:`);
         coluna = +prompt(`Rodada ${vezDaJogada}. Participante ${jogador}, escolha a coluna [0, 1 ou 2] que deseja jogar:`);
     
-        // Verificação da jogada - descomentar quando as verificações de vitória, empate e continuação forem finalizadas
-        // if(linha>=3 || coluna>=3){
-        //     alert(MENSAGENS.JOGADA_INVALIDA_NAO_EXISTE);
-        // }
-        // else if(tabuleiro[linha][coluna]!=""){
-        //     alert(MENSAGENS.JOGADA_INVALIDA_JA_OCUPADO);
-        // }
-        // else{
+    // Verificação da jogada
+        if(linha>=3 || coluna>=3){
+            alert("Jogada inválida! A linha e/ou coluna requisitada não existe. Tente novamente.");
+        } else if(tabuleiro[linha][coluna]!=""){
+            alert(`Jogada inválida! A posição na linha [${linha}] e coluna [${coluna}] já está ocupada. Tente novamente.`);
+        } else{
              tabuleiro[linha][coluna] = jogador;
-             i=1;
-        // }
+            i=1;
+        }
     }
 }
 
@@ -47,8 +42,8 @@
     function verificarLinha(tabuleiro, jogador) {
         for (let linha = 0; linha < 3; linha++) {
             if (tabuleiro[linha][0] === tabuleiro[linha][1] && tabuleiro[linha][1] === tabuleiro[linha][2] && tabuleiro[linha][0] === jogador) {
-                document.write(`PARABÉNS! O jogador ${jogador} venceu a partida!`);
-                return estadoDoJogo=1;
+                document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a linha ${linha}!`).bold() + "<br>");
+                estadoDoJogo=1;
             }
         }
     }
@@ -56,20 +51,19 @@
     function verificarColuna(tabuleiro, jogador){
         for (let coluna = 0; coluna < 3; coluna++) {
             if (tabuleiro[0][coluna] === tabuleiro[1][coluna] && tabuleiro[1][coluna] === tabuleiro[2][coluna] && tabuleiro[0][coluna] === jogador) {
-                document.write(`PARABÉNS! O jogador ${jogador} venceu a partida!`);
-                return estadoDoJogo = 1;
+                document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a coluna ${coluna}!`).bold() + "<br>");
+                estadoDoJogo = 1;
             }
         }
     }
 
     function verificarDiagonais(tabuleiro, jogador){
         if(tabuleiro[0][0] === tabuleiro[1][1] && tabuleiro[1][1] === tabuleiro[2][2] && tabuleiro[0][0] === jogador){
-            document.write(`PARABÉNS! O jogador ${jogador} venceu a partida!`);
-            return estadoDoJogo = 1;
-        }
-        else if(tabuleiro[0][2] === tabuleiro[1][1] && tabuleiro[1][1] === tabuleiro[2][0] && tabuleiro[0][2] === jogador){
-            document.write(`PARABÉNS! O jogador ${jogador} venceu a partida!`);
-            return estadoDoJogo = 1;
+            document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a diagonal principal!`).bold() + "<br>");
+            estadoDoJogo = 1;
+        } else if(tabuleiro[0][2] === tabuleiro[1][1] && tabuleiro[1][1] === tabuleiro[2][0] && tabuleiro[0][2] === jogador){
+            document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a diagonal secundária!`).bold() + "<br>");
+            estadoDoJogo = 1;
         }
     }
 
@@ -83,8 +77,8 @@
             }
         }
         if (posicoesPreenchidas == 9) {
-            document.write(MENSAGENS.EMPATE);
-            return estadoDoJogo = 1;
+            document.write("O jogo empatou!!");
+            estadoDoJogo = 1;
         }
     }
 
@@ -99,12 +93,10 @@
 
             if(JOGADOR1 != "X" && JOGADOR1 != "O"){
                 alert("Símbolo inválido. Por favor, escolha entre X ou O!");
-            }
-            else{
+            } else{
                 if (JOGADOR1 == "X"){
                     JOGADOR2 = "O"; 
-                }
-                else{
+                } else{
                     var JOGADOR2 = "X";   
                 }
                 document.write(`O símbolo do Jogador 1 é: ${JOGADOR1}. O símbolo do Jogador 2 é: ${JOGADOR2}.` + "<br>")
@@ -113,10 +105,10 @@
         }
 
 // Execução do jogo:
-    while(estadoDoJogo==0){
+    while(estadoDoJogo===0){
     // Jogador 1
-        document.write("<br><br>" + (`Rodada ${vezDaJogada}!`).bold() + "<br><br>");
-        document.write(`Jogador ${JOGADOR1}` + "<br><br>");
+        document.write("<br><br>" + (`Rodada ${vezDaJogada}!`).bold() + "<br>");
+        document.write((`Jogador ${JOGADOR1}`).bold() + "<br><br>");
         jogar(tabuleiro, JOGADOR1, vezDaJogada);
         exibirTabuleiro();
 
@@ -125,8 +117,12 @@
         verificarDiagonais(tabuleiro, JOGADOR1);
         verificarEmpate(tabuleiro);
 
+        if(estadoDoJogo == 1){
+            break;
+        }
+
     // Jogador 2
-        document.write("<br>"+ `Jogador ${JOGADOR2}` + "<br><br>");
+        document.write("<br>"+ (`Jogador ${JOGADOR2}`).bold() + "<br><br>");
         jogar(tabuleiro, JOGADOR2, vezDaJogada);
         exibirTabuleiro();
 
