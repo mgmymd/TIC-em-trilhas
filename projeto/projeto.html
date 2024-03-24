@@ -39,25 +39,22 @@
 }
 
 // Verificações
-    function verificarLinha(tabuleiro, jogador) {
+    function verificarVitoria(tabuleiro, jogador) {
+    // Verificação de linhas
         for (let linha = 0; linha < 3; linha++) {
             if (tabuleiro[linha][0] === tabuleiro[linha][1] && tabuleiro[linha][1] === tabuleiro[linha][2] && tabuleiro[linha][0] === jogador) {
                 document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a linha ${linha}!`).bold() + "<br>");
                 estadoDoJogo=1;
             }
         }
-    }
-
-    function verificarColuna(tabuleiro, jogador){
+    // Verificação de colunas
         for (let coluna = 0; coluna < 3; coluna++) {
             if (tabuleiro[0][coluna] === tabuleiro[1][coluna] && tabuleiro[1][coluna] === tabuleiro[2][coluna] && tabuleiro[0][coluna] === jogador) {
                 document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a coluna ${coluna}!`).bold() + "<br>");
                 estadoDoJogo = 1;
             }
         }
-    }
-
-    function verificarDiagonais(tabuleiro, jogador){
+        // Verificação de diagonais
         if(tabuleiro[0][0] === tabuleiro[1][1] && tabuleiro[1][1] === tabuleiro[2][2] && tabuleiro[0][0] === jogador){
             document.write((`PARABÉNS! O jogador ${jogador} venceu a partida completando a diagonal principal!`).bold() + "<br>");
             estadoDoJogo = 1;
@@ -112,9 +109,7 @@
         jogar(tabuleiro, JOGADOR1, vezDaJogada);
         exibirTabuleiro();
 
-        verificarLinha(tabuleiro, JOGADOR1);
-        verificarColuna(tabuleiro, JOGADOR1);
-        verificarDiagonais(tabuleiro, JOGADOR1);
+        verificarVitoria(tabuleiro, JOGADOR1);
         verificarEmpate(tabuleiro);
 
         if(estadoDoJogo == 1){
@@ -126,9 +121,7 @@
         jogar(tabuleiro, JOGADOR2, vezDaJogada);
         exibirTabuleiro();
 
-        verificarLinha(tabuleiro, JOGADOR2);
-        verificarColuna(tabuleiro, JOGADOR2);
-        verificarDiagonais(tabuleiro, JOGADOR2);
+        verificarVitoria(tabuleiro, JOGADOR2);
         verificarEmpate(tabuleiro);
 
         vezDaJogada++;
