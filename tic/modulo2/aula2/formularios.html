@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Segunda aula - modificado na aba do navegadorrrr</title>
+    </head>
+    <body>
+        <form> 	<!-- Para escrever o formulário -->
+            <p><strong> FORMULÁRIO 1 </strong></p>
+            <br><!--- Quebra de linha -->
+
+            <label>Nome Completo</label> <!-- Informar o que precisamos colocar dentro dos inputs -->
+            <br>
+            <input type="text">
+            <br> <!-- Quebra de linha -->
+
+            <label>Digite seu elogio</label>
+            <br> <!-- Quebra de linha -->
+            <textarea></textarea>
+
+            <br> <!-- Quebra de linha -->
+            <button type="submit">Enviar</button>
+        </form>
+        <br>
+        <form>
+            <p><strong> FORMULÁRIO 2 </strong></p>
+            <label for="name"> Nome</label>
+            <input name="name" id="name" placeholder="Jose Fonseca" required minlength="2" max="100"</b>
+            <br />
+
+            <label for ="email">E-mail</label>
+            <input type="email" name ="email" id="email"/>
+            <br>
+
+            <label for="birthdate">Data de nascimento</label>
+            <input type="date" name="birthdate" id="birthdate"/>
+            <br />
+
+            <label for="zipcode">CEP</label>
+            <input type="text" name="zipcode" id="zipcode" pattern="^[0-9]{5}-[0-9]{3}$" />
+            <br />
+
+            <label for="grade">Nota</label>
+            <input type="number" name="grade" id="grade" min="0" max="10" step=".5"/>
+            <br />
+
+            <label for="comments">Comentários</label>
+            <br />
+            <textarea name="comments" id="comments" cols="30" rows="5"></textarea>
+            <br>
+
+            <label for="favorite_stack">Tecnologia Favorita</label>
+            <select name="favorite_stack" id="favorite_stack" required> <!-- selecionar uma das opções é o que indica o select-->
+                <option value="" selected disabled>Selecione</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">Fullstack</option>
+                <option value="testes">QA e Testes</option>
+            </select> 
+
+            <fieldset>
+                <legend>Você está gostando do curso?</legend>
+                <input type="radio" id="yes" value="yes" name="liked"/>
+                <label for="yes">Sim</label>
+                <input type="radio" id="no" value="no" name="liked"/>
+                <label for="no">Não</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quais módulos que você recomenda?</legend>
+                <input type="checkbox" name="module" value="html" id="html" />
+                <label for="html">HTML</label>
+
+                <input type="checkbox" name="module" value="css" id=""css />
+                <label for="css">CSS</label>
+                <input type="checkbox" name="module" value="js" id="js" checked />
+                <label for="js">JavaScript</label>
+            </fieldset>
+
+            <button>Enviar dados!</button>
+        </form>   
+    </body>
+</html>
