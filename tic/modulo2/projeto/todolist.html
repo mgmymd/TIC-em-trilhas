@@ -6,28 +6,27 @@
         <title>To do list</title>
     </head>
     <body>
-        <form id="tarefa" action="" method="get">
-            <div>
-                <input id="ftarefa" placeholder="Adicionar uma tarefa" required minlength="1" maxlength="20000"/>
+        <div class="container">
+            <form id="ftarefa" action="" method="get">
+                <input type="text" name="tarefa" placeholder="Adicionar uma tarefa" required minlength="1" maxlength="20000"/>
                 <button type="submit">+</button>
-            </div>
-            <div>
-                <h2>TAREFAS JÁ ADICIONADAS</h2>
-                <ul>
-                    <li>               
-                        <input type="checkbox" name="tarefacriada" value="Task 1" id="task1"/>
-                        <label for="task1">Task 1</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="tarefacriada" value="Task 2" id="task2"/>
-                        <label for="task2">Task 2</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="tarefacriada" value="Task 3" id="task3"/>
-                        <label for="task3">Task 3</label>
-                    </li>
-                </ul>
-            </div>
-        </form>
+            </form>
+
+            <h2>TAREFAS JÁ ADICIONADAS</h2>
+            <ul id="toDoList">
+                <li>               
+                    <input type="checkbox"/>
+                    <span>Task 1</span>
+                </li>
+                <li>
+                    <input type="checkbox"/>
+                    <span>Task 2</span>
+                </li>
+                <li>
+                    <input type="checkbox"/>
+                    <span>Task 3</span>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
