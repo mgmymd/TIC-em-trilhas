@@ -6,29 +6,28 @@
         <title>To do list</title>
     </head>
     <body>
-        <h1>TO DO LIST</h1>
-        <form id="adicionartarefa">
-            <input tarefa="ftarefa" id="ftarefa" placeholder="Adicionar uma tarefa" 
-                    required minlength="2" max="10000"/>
-            <button type="submit">+</button>
-        </form><br>
-
-        <h2>TAREFAS JÁ ADICIONADAS</h2>
-        <form id="tarefasadicionadas">
-            <ul>
-                <li>               
-                    <input type="checkbox" name="tarefacriada" value="task1" id="task1"/>
-                    <label for="task1">Task 1</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="tarefacriada" value="task2" id="task2"/>
-                    <label for="task2">Task 2</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="tarefacriada" value="task3" id="task3"/>
-                    <label for="task3">Task 3</label>
-                </li>
-            </ul>
+        <form id="tarefa" action="" method="get">
+            <div>
+                <input id="ftarefa" placeholder="Adicionar uma tarefa" required minlength="1" maxlength="20000"/>
+                <button type="submit">+</button>
+            </div>
+            <div>
+                <h2>TAREFAS JÁ ADICIONADAS</h2>
+                <ul>
+                    <li>               
+                        <input type="checkbox" name="tarefacriada" value="Task 1" id="task1"/>
+                        <label for="task1">Task 1</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="tarefacriada" value="Task 2" id="task2"/>
+                        <label for="task2">Task 2</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="tarefacriada" value="Task 3" id="task3"/>
+                        <label for="task3">Task 3</label>
+                    </li>
+                </ul>
+            </div>
         </form>
     </body>
 </html>
