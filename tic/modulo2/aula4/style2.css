@@ -1,0 +1,32 @@
+    .texto {
+        color: #F00;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    div p.descricao {
+        #sidebar p{ 
+            color:rgb(29, 214, 186);   /* Não vai ter a precedência, pelo fato de ser 2 seletores de 
+        * elemento (2 pts) mais 1 seletor de classe (10 pts) = 12 pts */
+        }
+        color:rgb(116, 16, 192); /* Vai ter precedência, pelas pontuações, 
+        * como a de ser 1 seletor de id (descricao = 100 pts) mais 1 seletor de 
+        * elemento (p = 1 pt) = 101 pts */ 
+    }
+
+    body {
+        font-size: 12px;
+    }
+        #conteudo p.primeiro {
+        color: green; /* Cor verde */
+    } 
+        #conteudo p {
+        color: blue; /* Cor azul */
+        font-size: 18px;
+    } 
+        p {
+        color: red; /* Cor vermelha */
+        font-size: 26px;
+    } 
