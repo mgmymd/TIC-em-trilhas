@@ -4,3 +4,11 @@
 *.txt
 *.pptx
 *.pptx#
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+jspm_packages/
