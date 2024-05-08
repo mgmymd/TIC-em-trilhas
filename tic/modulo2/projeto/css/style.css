@@ -1,0 +1,40 @@
+input[type=text]{
+    border-style:solid;
+    border-color: black;
+}
+
+::placeholder{
+    font-family: constantia;
+    color:lightgray;
+}
+
+button{
+    background-color: orange;
+    border: 0;
+    margin-bottom: 0px;
+    width: 32px;
+    height: 21px;
+}
+
+button:hover{
+    background-color: rgb(188, 128, 16);
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 10px;
+    justify-content: left;
+    padding-left: 0%;
+}
+
+li:nth-child(odd){
+    background-color: lightgrey;
+    height: 35px;
+    align-content: center;
+}
+
+li:nth-child(even){
+    background-color: white;
+    height: 35px;
+    align-content: center;
+}
