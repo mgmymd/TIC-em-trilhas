@@ -1,40 +1,78 @@
-input[type=text]{
-    border-style:solid;
-    border-color: black;
+/* Centralizar o container definindo a largura e margens laterais como automáticas.
+ * Top e Bottom terão 0, e o auto indica que irá se adaptar com a largura. */
+.container {
+    width: 500px;
+    margin: 0 auto;
 }
 
-::placeholder{
+/* Definir o form como um container flexível para facilitar a manipulação de seus
+ * elementos filhos. Colocando também um espaço entre os itens (botão e input) com o gap,
+ * podendo retirar o  "margin-bottom: 0px;" que tinha sido colocado inicialmete em button {} */
+#ftarefa{
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Adicionado o id #ftarefa antes do input[type=text] na correção. 
+ * A propriedade flex define como um item será posicionado dentro do espaço disponível em seu
+ * container. O flex 1 inidca que ocupa todo espaço disponível, e por isso assume o valor 1 nesse caso.
+ * Além disso, o input terá uma borda, altura e preenchimento defindo.
+ * Adicionado o flex, a altura de 2rem e o padding de 0 0.5rem.*/
+#ftarefa input[type=text]{
+    flex: 1;
+    border: 2px;
+    border-style:solid;
+    border-color: black;
+    height: 2rem;
+    padding: 0 0.5rem;
+}
+
+/* Estilização do placeholder dentro do input */
+input[type=text]::placeholder{
     font-family: constantia;
     color:lightgray;
 }
 
-button{
+/* Na correção foi alterado a largura do button e removida sua altura.
+ * Adicionado também o id do formulário para indicar que é o botão relacionado. */
+#ftarefa button{
     background-color: orange;
     border: 0;
-    margin-bottom: 0px;
-    width: 32px;
-    height: 21px;
+    width: 3rem;
 }
 
 button:hover{
     background-color: rgb(188, 128, 16);
 }
 
-ul {
+/* Correção: alteração de ul para o id da lista que vamos estilizar.
+ * Retirar o margin-top, justify-content e padding-left, tendo em vista que acima,
+ * no container, já deixamos como flex e indicamos que irá ocupar todo o espaço disponível.
+ * word-wrap: break-word para que as palavras possam ser quebradas. Portanto, altera o texto
+ * para quebrar as palavras caso atinja a borda do container.
+ * Remove o espaçamento interno e adiciona uma borda cinza claro. */
+#toDoList {
     list-style-type: none;
-    margin-top: 10px;
-    justify-content: left;
-    padding-left: 0%;
+    word-wrap: break-word;
+    padding: 0;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(241, 240, 240);
 }
+
+/* Para o espaçamento interno de todos os itens, podemos tirar a definição de altura de 35px
+ * que havia sico colocada dentro dos li:nth-child(odd) e li:nth-child(even) e colocar separado  */
+#toDoList li{
+    padding: 0.5rem 1rem;
+}
+
 
 li:nth-child(odd){
     background-color: lightgrey;
-    height: 35px;
     align-content: center;
 }
 
 li:nth-child(even){
     background-color: white;
-    height: 35px;
     align-content: center;
 }
