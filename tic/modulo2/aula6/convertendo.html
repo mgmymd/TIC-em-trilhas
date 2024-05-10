@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversões de dados</title>
+</head>
+<body>
+    <script>
+    const valorInteiro = parseInt('42');
+    const valorInteiro2 = parseInt('42.5');
+    const valorInteiro3 = parseInt('42.8');
+    console.log(valorInteiro, valorInteiro2, valorInteiro3);
+
+    const valorDecimal = parseFloat("3.14");
+    const valorDecimal2 = parseFloat("5.1456");
+    console.log(valorDecimal, valorDecimal2);
+
+    const valorNumerico = Number("42");
+    const valorNumerico2 = Number("3.14");
+    console.log(valorNumerico, valorNumerico2);
+
+    const numerp = 42;
+	const texto = numerp.toString();
+    console.log(numerp, texto);
+
+    const texto2 = String(42);
+    console.log(texto2);
+
+    const valorNumerico3 = +'42';
+    console.log(valorNumerico3);
+
+    const valorBooleano = Boolean(0);
+    console.log(valorBooleano);
+
+    const letras = Array.from("hello");
+    console.log(letras);
+
+
+
+
+    </script>
+</body>
+</html>
