@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 8</title>
+</head>
+<body>
+    <script>
+        const resposta ={            usuario:'AAAA',
+            canal: 'facebook',
+            felicidade: 85.50,
+            tristeza: 3.50,
+            euforia: 66.20,
+            ansiedade: 5.0,         };
+
+        // Para acessar assim será necessário escrever várias linhas deixando o código carregado
+        console.log(`Olá, meu nome é: ${resposta.usuario}`);
+        console.log(`Meu nível de felicidade no texto é: ${resposta.felicidade}`);
+        console.log(`Meu nível de tristeza no texto é: ${resposta.tristeza}`);
+
+        console.log('Destructing, usado para declarar variáveis ou novo valor para aquela variável')
+        // Podemos usar o destructing que resume-se a quebrar uma estrutura complexa. Estamos quebrando em partes menores
+        const {usuario, felicidade, tristeza, euforia, ansiedade} = resposta;
+        // Por ter quebrado em partes menores, podemos agora chamar diretamente as propriedades
+        console.log('A probabilidade de felicidade no texto é de: ' + felicidade + '%')
+
+        console.log('Adicionando ou re-atribuir novos valores com o Destructuring');
+        let usuario2 = "BBBB";
+        let canal2 = "instagram";
+        let felicidade2 = 35.60;
+
+        const resposta2={   usuario2: 'AAA',
+            canal2: 'facebook',
+            felicidade2: '85.50',
+            tristeza2: 3.50,
+            euforia2: 66.20,
+            ansiedade2: 5.50,    }
+
+        // Criando o destructuring: declarou novas e fez novas atribuições
+        ({usuario2, felicidade2, tristeza2, euforia2, ansiedade2} = resposta2);
+
+        console.log(`Olá, meu nome é: ${usuario2}`);
+        console.log('A probabilidade de felicidade no texto é de: ' + felicidade2 + '%')
+
+    </script>
+</body>
+</html>

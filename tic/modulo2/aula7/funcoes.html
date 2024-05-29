@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções - Aula 7</title>
+</head>
+<body>
+    <script>
+        function soma (x, y){
+            console.log(x+y);
+        }
+
+        soma(2,8);
+
+        let x = +prompt("Entre com o primeiro valor: ");
+        let y = +prompt("Entre com o segundo valor: ");
+        soma(x,y);
+
+    console.log("Função anônima");
+    const anonima = function(a, b){
+        alert(a+b);
+        console.log(a+b);
+    }
+    anonima(1, 99);
+
+    console.log("Arrow Function");
+    const funcaoFlecha = (c,d) => c+d;
+    console.log(funcaoFlecha(5,4));
+
+    var numeroAleatorio = function() {return Math.random()};
+    console.log(numeroAleatorio());
+    numeroAleatorio = () => Math.random();
+    console.log(numeroAleatorio());
+
+    </script>
+</body>
+</html>

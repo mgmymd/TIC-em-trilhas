@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de fluxo - Ex- Aula 7</title>
+</head>
+<body>
+    <script>
+        var categoria;
+
+        let nome = prompt("Digite o nome do atleta: ");
+        let idade = +prompt("Digite a idade do atleta: ");
+
+        switch(idade){
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+                categoria = "Infantil";
+                break;
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+                categoria = "Juvenil"
+                break;
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                categoria="Junior"
+                break;
+            case 21:
+            case 22:
+            case 23:
+            case 24:
+            case 25:    
+                categoria="Junior"
+                break;
+            default:
+                categoria = "Categoria/ idade inválido";
+                break; 
+        }
+
+    console.log(`O jogador ${nome} pertence a categoria ${categoria}.`)
+
+    console.log('Valor ternário!');
+    const status = idade>=18 ? "Maior idade" : "Menor idade";
+    console.log(status);
+    </script>
+</body>
+</html>

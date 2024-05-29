@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA 8</title>
+</head>
+<body>
+    <script>
+        console.log("Hoisting na prática, imprimindo no console o valor do contador antes de declarar. Contador: " + contador);
+        var contador = 1;
+        console.log("Hoisting na prática, imprimindo no console o valor do contador após declarar. Contador: " + contador);
+
+        // Diferença entre hoisting e declaração
+        //console.log('Não pode ser acessada por não ter sido declarada/inicializada ainda, mesmo com o hoisting ocorrendo. Contador2: ' + contador2);
+        // let contador2 = 1;
+        // console.log('Não pode ser acessada por não ter sido inicializada. Contador 3:' + contador3);
+        // const contador3 = 1;
+
+        // console.log('Acesso de variável que não existe:' + numero + ' . A variável não está definida/não existe e por isso trouxe o erro.');
+        // const contador4 = 1;
+
+        //Hoisting de funções, declarações de funções para o início do script
+        let x = 10;
+        let y = 20;
+        let resultado = soma(x,y);
+        console.log(resultado);
+
+        function soma(x,y){
+            console.log('Função regular que está sofrendo hoisting')
+            return x+y
+        }
+
+        // Função anônima, estamos realizando o hoisting de uma variável e não uma ufnção, portanto soma2 não é uma função e apresenta erro
+        let a=1;
+        let b=2;
+        let resultado2 = soma2(a,b);
+        console.log(resultado2);
+
+        var soma2 = function(a,b){
+            return a+b;
+        }
+
+
+
+    </script>
+</body>
+</html>

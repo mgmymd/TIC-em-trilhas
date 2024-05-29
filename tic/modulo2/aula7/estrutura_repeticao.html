@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de repetição - Ex- Aula 7</title>
+</head>
+<body>
+    <script>
+        console.log("ESTRUTURA DE REPETIÇÃO FOR");
+        const numeros = [1,2,3];
+
+        for(let i = 0; i<3; i++){
+            console.log("O item " + i + " do array numeros é: " + numeros[i]);          }
+
+        console.log("O laço for... in pode ser usado para iterar sobre as propriedades de um objeto");
+        const pessoa = {nome: 'AAAAAA', idade: 18, cidade: 'BBBBB'};
+        for(let key in pessoa){
+        // Criamos uma chave para o objeto pessoa, depois uma chave para a idade e outra para cidade
+            console.log(`O/A ${key} é ${pessoa[key]}`);             }
+
+        console.log("O laço for...of é usado para iterar sobre elementos iteráveis, como strings, objetos, arrays iteráveis");
+        const num = [1,2,3];
+        for(let numero of num){
+            console.log(numero);        }
+
+    console.log("Estrutura de repetição while!");
+    let numero = parseInt(prompt("Digite um número para contagem regressiva:"));
+    
+    while (numero > 0) {
+        console.log(numero);
+        numero--;
+        }
+    console.log("Contagem regressiva concluída!");
+    </script>
+</body>
+</html>

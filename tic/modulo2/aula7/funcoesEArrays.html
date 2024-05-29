@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções e arrays - Aula 7</title>
+</head>
+<body>
+    <script>
+    /* Crie um programa que inicialize os dois primeiros elementos de um vetor, como 0 e 1. Os demais
+    * elementos do vetor de comprimento 10, deve ser preenchido com a seguinte regra:
+            vetor[i] = vetor[i - 1] + vetor[i - 2]
+    * Imprima cada elemento do vetor. */
+
+        var vetor = new Array(10);
+        vetor[0] = 1;
+        vetor[1] = 3;
+
+        for(var i=2; i<10; i++){
+            vetor[i] = vetor[i-1] + vetor [i-2];
+            console.log(`Posição ${i} o valor é: ${vetor[i]}`);
+        }
+
+        console.log('Funções de manipulação de Arrays!');
+        console.log('CONCAT');
+        var vetor1 = new Array(1,2,3);
+        var vetor2 = new Array(4,5,6);
+        var vetor3 = new Array(7,8,9);
+        console.log(`O valor do Array 1: ${vetor1}`);
+        console.log(`O valor do Array 2: ${vetor2}`);
+        console.log(`O valor do Array 3: ${vetor3}`);
+        var resultado = vetor1.concat(vetor2, vetor3);
+        console.log(`O USO DE CONCAT: ${resultado}`);
+
+        console.log('INDEXOF');
+        var vetor4 = new Array(1,2,3,4,5,6);
+        var indice = vetor4.indexOf(3);
+        console.log(`O uso de indexOf mostrando o índice: ${indice}`);
+
+        console.log('JOIN');
+        var elementos = vetor3.join("---");
+        console.log(`O uso de JOIN: ${elementos}`);
+
+        console.log('PUSH');
+        vetor4.push(99, 100, 101);
+        console.log(`Uso do PUSH: ${vetor4}`);
+
+        console.log('UNSHIFT');
+        vetor4.unshift(102,103,104);
+        console.log(`Uso do UNSHIFT: ${vetor4}`);
+
+        console.log('REVERSE');
+        console.log(`O vetor 4 antes de reverse: ${vetor4}`);
+        vetor4.reverse();
+        console.log(`O vetor 4 após o reverse: ${vetor4}`);
+
+        console.log('SORT');
+        console.log(`O vetor 3 antes do sort: ${vetor3}`);
+        vetor3.sort();
+        console.log(`O vetor 3 após o uso do sort: ${vetor3}`);
+
+        console.log('POP');
+        console.log(`O vetor 4 antes de remover o último elemento com POP: ${vetor4}`)
+        vetor4.pop()
+        console.log(`O vetor 4 após a remoção do último elemento: ${vetor4}`);
+
+        console.log('SHIFT');
+        console.log(`O vetor 4 antes de remover o primeiro elemento com POP: ${vetor4}`)
+        vetor4.shift()
+        console.log(`O vetor 4 após a remoção do primeiro elemento: ${vetor4}`);
+
+        console.log('SLICE');
+        var vetor5 = new Array(1,2,3,4,5);
+        console.log(`Vetor 5 antes do slice: ${vetor5}`);
+        var novoVetor = vetor5.slice(0,2);
+        console.log(`Novo vetor com o slice: ${novoVetor}. E o vetor 5: ${vetor5}`)
+
+        console.log('SPLICE')
+        var vetor5 = new Array(1,2,3,4,5);
+        console.log(`Vetor 5 antes do slice: ${vetor5}`);
+        var novoVetor = vetor5.splice(0,2);
+        console.log(`Novo vetor com o slice: ${novoVetor}. E o vetor 5: ${vetor5}`)
+
+        console.log('SPLICE, ADICIONANDO')
+        var cores = ['vermelho', 'laranja', 'amarelo', 'verde', 'azul'];
+        console.log(`Vetor antes do splice: ${cores}`)
+        var novaCores = cores.splice(2, 0, 'roxo', 'rosa');
+        console.log(`Vetor após o splice de adicionar: ${cores}`);
+
+        console.log('SPLICE, REMOVENDO')
+        var cores = ['vermelho', 'laranja', 'amarelo', 'verde', 'azul'];
+        console.log(`Vetor antes do splice: ${cores}`)
+        var novaCores = cores.splice(1,2);
+        console.log(`Vetor após o splice de remover: ${cores}`);
+
+        console.log('SPLICE, SUBSTITUIR')
+        var cores = ['vermelho', 'laranja', 'amarelo', 'verde', 'azul'];
+        console.log(`Vetor antes do splice: ${cores}`)
+        var novaCores = cores.splice(3, 1, 'marrom');
+        console.log(`Vetor após o splice de substituir: ${cores}`);
+    </script>   
+</body>
+</html>

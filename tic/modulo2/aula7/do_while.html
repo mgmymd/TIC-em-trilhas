@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de repetição Do/While - Ex- Aula 7</title>
+</head>
+<body>
+    <script>
+    console.log("Estrutura de repetição DO WHILE!");
+    const aleatorio = Math.floor(Math.random() * 10 ) + 1;
+    let palpite;
+    let tentativas = 0;
+
+    do{
+        palpite = +prompt("Adivinhe o número entre 1 e 10: ");
+        tentativas = tentativas + 1;
+
+        if(palpite === aleatorio){
+            console.log("Você adivinhou o número " + aleatorio + " em " + tentativas + " tentativas.")
+        }
+        else{
+            console.log("Tente novamente.");
+        }
+    }
+    while(palpite !== aleatorio);
+    
+    </script>
+</body>
+</html>
